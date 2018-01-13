@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-data>
+
+		<UiMap>
+		    <application>
+				<DefaultPage>utilization</DefaultPage>
+				<AppName>Devicepass</AppName>
+				<Version>0.0.1</Version>
+				<Environment>QA</Environment>
+				<TestCategory>Web</TestCategory>
+				<NetWork>Local Connection</NetWork>
+				<Description>保存Devicepass所有页面的元素定位</Description>
+			</application>
+			<pages>
+
+				<page name="utilization" defaultView="deviceUtilizationview" description = "Utilization页面元素" >
+						<!-- 本页面的弹出界面或确认框    -->
+				 		
+				 		<!-- Device Brand Chart -->
+				 		<view name="deviceUtilizationview" 			areas="[common,login,leftopt,listview,deviceUtilizationview]" />
+				 		<view name="listview" 			areas="[leftopt,alldevicestop,listview]" />
+
+
+				 		<areas>
+				 		
+                            <leftopt>
+                                <!--<leftOption description="左边选项">-->
+                                <element name="RecentUsedMenu"      type="xpath"       value="//span[text()='Recently Used']"      														 view="recentUsed:defaultview"/>
+                   				<element name="groups"              type="xpath"       value="//span[text()='Groups']"             														 view="groups:defaultview"/>
+			                    <element name="rateMenu"            type="xpath"       value="//span[text()='Rate']"               														 view="rate:pricingsettings" />
+								<element name="All Devices"         type="xpath"       value="//a[child::span[contains(text(),'All Devices')]]"      									 view="alldevices:groupview" />
+                            	<element name="Utilization"         type="xpath"       value="//div[@class='menu-list fill-height ng-scope']/descendant::span[text()='Utilization']"     view="utilization:deviceUtilizationview" />
+                            
+                            
+                            </leftopt>
+                            
+                            <deviceUtilizationview>
+                           		<!--ChartView-->
+                                <element name="ChartView"                  type="xpath"       value="//div[contains(@class,'col-sm-12 border')]/descendant::i[contains(@class,'iconfont icon-pie')]"        view="utilization:ChartView"/>
+                          		<!--listview-->
+                                <element name="listview"        		   type="xpath"       value="//div[contains(@class,'col-sm-12 border')]/descendant::i[contains(@class,'icon-List')]"       			view="utilization:listview"/>
+                            	
+                            	<!--Device Brand Chart-->
+                                <element name="uDBChart"      type="xpath"       value="//div[contains(@class,'row topBrand')]/descendant::span[contains(text(),'Device Brand')]"       																	view="utilization:deviceUtilizationview"/>
+                           		
+                                <!--Actual usage hours-->
+                                <element name="AusTop20"      type="xpath"       value="//div[@class='fill-height list-content']/descendant::span[text()='Actual usage hours(%)']"       />
+                          		<!-- Billablehours-->
+                                <element name="Billablehours"      type="xpath"       value="//div[@class='col-sm-8 fill-height']/descendant::div[@class='btn-group']/descendant::span[text()='Billable hours(%)']"       />
+                          		
+                          		<!--Get chart bar percent of the first brand including Actual and Billable under Top20 -->
+                                <element name="FirstBars"      type="xpath"       value="//div[@class='fill-height usageTable']/div[@class='col-sm-12 chart-line ng-scope'][1]/div[contains(@class,'text-danger ng-binding')]"       />
+                          		
+                          		
+                          		<!--Actual usage hours Avg Brand-->
+                          		<element name="AuhAvgBrand"      type="xpath"       value="//div[@class='col-sm-4 fill-height']/descendant::span[text()='Actual usage hours(%)']"       />
+                           
+                           
+                            	<!-- Utilization All Brands, according to this node, can get all mobile object to list<>-->
+                                <element name="uAllBrands"      		   type="xpath"       value="//div[contains(@class,'col-sm-1 sub-brand')]/div[contains(@class,'device-name ng-binding')]"       />
+                           			
+                           		<!-- Utilization All Brands count, according to this node, can get all mobile model count object to list<>-->
+                           		<element name="uABCounts"        		   type="xpath"       value="//div[contains(@class,'brandBox')]/descendant::div[contains(@class,'device-number')]"       		/>
+                            	
+                            	<!--Utilization Brands All Models serials， according to this node, can get All Model's serial on per brand-->
+                            	<element name="uBAMSerials"           	   type="xpath"       value="//tbody/tr[@class='ng-scope']/td[contains(@class,'width-150')][1]"       />
+                            	
+                            	<!--Utilization Brands All Models Actions， according to this node, can get All Model's Action on per brand-->
+                            	<element name="uBAMActions"      type="xpath"       value="//div[contains(@class,'table-box')]/descendant::td[contains(@class,'action')]/descendant::i[contains(@class,'goDetial')]"       />
+                            	
+                            	<!--Utilization Brand Model Records, according to this node, can all records related to 'Type'
+                            		Device Utilization/NUBIA/NUBIA NX541J/NX541J -> Type
+                            	-->
+                            	<element name="uBMRecordsType"      type="xpath"       value="//div[contains(@class,'table-box')]/descendant::tbody/tr/td[contains(@class,'img-app-name')]"       />
+                            	
+                            	<!--Utilization Brand Model Records, according to this node, can all records related to 'Company'
+                            		Device Utilization/NUBIA/NUBIA NX541J/NX541J -> Company
+                            	-->
+                            	<element name="uBMRecordsCompany"      type="xpath"       value="//div[contains(@class,'table-box')]/descendant::tbody/tr/td[contains(@ng-if,'companyName')]"       />
+                            	
+                            	<!--Utilization Brand Model Records, according to this node, can all records related to 'Team'
+                            		Device Utilization/NUBIA/NUBIA NX541J/NX541J -> Team
+                            	-->
+                            	<element name="uBMRecordsTeam"      type="xpath"       value="//div[contains(@class,'table-box')]/descendant::tbody/tr/td[contains(@ng-if,'userName')][1]"       />
+                            	
+                                <!--Utilization Brand Model Records, according to this node, can all records related to 'User'
+                            		Device Utilization/NUBIA/NUBIA NX541J/NX541J -> User
+                            	-->
+                            	<element name="uBMRecordsUser"      type="xpath"       value="//div[contains(@class,'table-box')]/descendant::tbody/tr/td[contains(@ng-if,'userName')][2]"       />
+                            	
+                            </deviceUtilizationview>
+                            
+                            
+                            
+                            
+                            <listview>
+                                <!---->
+                                <element name=""      type="xpath"       value=""       />
+                           
+                            </listview>
+						
+						
+						</areas>
+				 
+				 		
+				
+				
+				 </page>
+
+                <page name="groups" defaultView="defaultview" description = "Groups页面元素">
+                    <view name="defaultview" 		areas="[common,login,leftopt,groupstop,groupsbottom,grouptable]" />
+                    <view name="addnewgroup"        areas="[addnewgroup]"/>
+                    <areas>
+                        <leftopt>
+                            <!--<leftOption description="左边选项">-->
+                            <element name="groups"              type="xpath"       value="//span[text()='Groups']"      view="groups:defaultview"/>
+                            <element name="devices"             type="xpath"       value="//span[text()='All Devices']"     view="alldevices:groupview" />
+                      		<element name="All Devices"             type="xpath"       value="//a[child::span[contains(text(),'All Devices')]]"     view="alldevices:groupview" />
+                        </leftopt>
+
+                        <groupstop description="Groups页面顶部公用部分元素">
+                            <element name="addnewgroupBtn"              type="xpath"       value="//button[contains(@ng-click,'addDeviceGroup')]"      view="groups:addnewgroup"/>
+                            <element name="removeBtn"              type="xpath"       value="//button[contains(@ng-click,'batchRemoveDeviceGroups')]"  />
+                            <!--remove确认框-->
+                            <element name="removeconfirmBtn"              type="xpath"       value="//button[contains(@ng-click,'ok')]"  />
+                            <element name="removecancelBtn"              type="xpath"       value="(//button[contains(@ng-click,'cancel')])[2]"  />
+
+                        </groupstop>
+
+                        <grouptable description="Groups页面列表部分元素">
+                            <!-- 无设备组时的元素  -->
+                            <element name="empty"              type="xpath"       value="//div[contains(@class,'list_empty')]"/>
+                            <!-- 有设备组时的元素  -->
+                            <element name="selectallCheckbox"           type="xpath"       value="(//table[contains(@class,'table-striped')]//th)[1]/input"/>
+                            <element name="groupnamelabel"              type="xpath"       value="(//table[contains(@class,'table-striped')]//th)[2]//span"/>
+                            <element name="platformlabel"               type="xpath"       value="(//table[contains(@class,'table-striped')]//th)[3]//span"/>
+                            <element name="totaldeviceslabel"           type="xpath"       value="(//table[contains(@class,'table-striped')]//th)[4]//span"/>
+                            <element name="createdatelabel"             type="xpath"       value="(//table[contains(@class,'table-striped')]//th)[5]//span"/>
+                            <element name="actionlabel"                 type="xpath"       value="(//table[contains(@class,'table-striped')]//th)[6]//span"/>
+                            <element name="selectCheckbox"              type="xpath"       value="//input[contains(@ng-click,'toggleDeviceGroups')]"/>
+                            <element name="groupname"                   type="xpath"       value="(//table[contains(@class,'table-striped')]//td)[2]//span"/>
+                            <element name="platform"                    type="xpath"       value="(//table[contains(@class,'table-striped')]//td)[3]//span"/>
+                            <element name="totaldevices"                type="xpath"       value="(//table[contains(@class,'table-striped')]//td)[4]//span"/>
+                            <element name="createdate"                  type="xpath"       value="(//table[contains(@class,'table-striped')]//td)[5]//span"/>
+                            <element name="action"                      type="xpath"       value="(//table[contains(@class,'table-striped')]//td)[6]//span"/>
+
+                        </grouptable>
+
+                        <groupsbottom description="Groups页面底部公用部分元素">
+
+                        </groupsbottom>
+
+                        <addnewgroup>
+                            <element name="cancelBtn"              type="xpath"       value="//button[text()='Cancel')]"      view="groups:defaultview"/>
+                            <element name="submitBtn"              type="xpath"       value="//button[text()='Submit')]"      view="groups:defaultview"/>
+                        </addnewgroup>
+                    </areas>
+                </page>
+
+
+		 	</pages>
+	</UiMap>
+</test-data>

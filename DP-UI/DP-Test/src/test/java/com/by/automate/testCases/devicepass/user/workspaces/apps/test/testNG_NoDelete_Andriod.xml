@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suite1">
+	
+    <test name="NoDelete_Android" preserve-order="true">
+        <groups>
+            <run>
+				<!-- login -->
+					<include name="test00000_Login_NoDelete" />
+				
+				
+				
+				<!-- apps -->
+					<include name="test00010_openApps" />
+				
+				
+					<!-- app上传和编辑 -->
+						<!-- andriod -->
+						<include name="test00030_app_uploadApp" />
+						<!-- <include name="test00060_searchApp" /> -->
+						<include name="test00050_app_editApp" />
+						
+						
+						
+					<!--Scrip上传和编辑 -->
+						<!-- andriod -->
+						<include name="test00100_checkNoScript" />
+						
+							<!-- AppiumPython -->
+							<include name="test00110_selectAppScriptType" />
+							<include name="test00120_selectAppScriptType_python" />
+							<include name="test00130_uploadAppScript_python" />
+							
+							<!-- UIAutomator -->
+							<include name="test00140_selectAppScriptType_UIAutomator" />
+							<include name="test00150_uploadAppScript_UIAutomator" />
+							<include name="test00160_editAppScript" />
+							<include name="test00180_closeScriptWindows" />
+						
+						
+					<!-- Automation -->
+						<!-- andriod -->
+							<!-- AppiumPython -->
+							<include name="test00200_automation_python_upload" />
+							<include name="test00210_automation_checkAppScript_python" />
+							
+							<!-- UIAutomator -->
+							<include name="test00220_automation_UIAutomator_upload" />
+							<include name="test00230_automation_checkAppScript_UIAutomator" />
+							
+							<include name="test00240_closeAutomatortWindows" />
+
+							
+							
+				<!-- current use-->
+					<!-- andriod -->
+						<include name="test00300_allDevice_selectDevice_andriod" />
+						
+						<!-- app上传 -->
+						<include name="test00310_CurrentUse_uploadApp" />
+						<include name="test00320_CurrentUse_editApp" />
+						
+						<!--Scrip上传和编辑 -->
+							<!-- AppiumPython -->
+							<include name="test00330_currentUse_AppiumPython_scriptupload" />
+							<include name="test00340_CurrentUse_editAppiumPythonScript" />
+							
+							<!-- UIAutomator -->
+							<include name="test00350_currentUse_Uiautomator_scriptupload" />
+							<include name="test00360_currentUse_editUiautomatorScript" />
+							
+							<!-- 关闭script窗口 -->
+							<include name="test00380_currentUse_script_close" />
+						
+						<!-- Automation -->
+							<!-- AppiumPython -->
+							<include name="test00410_CurrentUse_automation_Script_AppiumPython" />
+							<include name="test00420_CurrentUse_automation_uploadScript_AppiumPython" />
+							<include name="test00430_currentUse_automation_AppiumPython_cancel" />
+						
+							<!-- UIAutomator -->
+							<include name="test00440_currentUse_automation_Script_UIAutomator" />
+							<include name="test00450_currentUse_automation_uploadScript_AppiumPython" />
+							<include name="test00460_currentUse_automation_UIAutomator_cancel" />
+				
+				<!-- groups-->
+<!-- 					<include name="openGroups" />
+					<include name="Groups_AddNewGroup" />
+					<include name="Groups_editGroup" />
+					<include name="Groups_SelectDevices" />
+					<include name="Groups_UnselectDevices" /> -->
+
+				
+				
+				<!-- after test -->
+					<include name="test90000_releaseAll" />
+					<include name="test99999_tearDown" />
+				
+            </run>
+        </groups>
+
+        <classes>
+            <class name="com.by.automate.testCases.devicepass.user.workspaces.apps.test.Test_FC_test" />
+
+        </classes>
+    </test>
+  
+  
+
+	
+
+</suite>

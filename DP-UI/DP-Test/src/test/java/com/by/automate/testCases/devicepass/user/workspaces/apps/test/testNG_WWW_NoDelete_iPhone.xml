@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suite1">
+	
+    <test name="groups" preserve-order="true">
+        <groups>
+            <run>
+				<!-- login -->
+					<include name="test00000_Login_www" />
+				
+				<!-- apps -->
+					<include name="test00010_openApps" />
+				
+					<!-- app上传 -->
+						<!-- iPhone -->
+						<include name="test00040_app_uploadPac" />
+							<include name="test00050_app_editApp" />
+						
+					<!--Scrip -->
+						<!-- iPhone -->
+							<include name="test00110_selectAppScriptType" />
+							<include name="test00130_uploadAppScript_python" />
+							<include name="test00160_editAppScript" />
+							<include name="test00180_closeScriptWindows" />
+						
+						
+					<!-- Automation -->
+						<!-- iPhone -->
+							<!-- AppiumPython -->
+							<include name="test00200_automation_python_upload" />
+							<include name="test00210_automation_checkAppScript_python" />
+						
+				
+				<!-- current use-->
+					<!-- iPhone -->
+					<include name="test00300_allDevice_selectDevice_iphone" />
+					
+					<!-- app上传 -->
+					<include name="test00310_CurrentUse_uploadpac" />
+					<include name="test00320_CurrentUse_editApp" />
+						
+						
+					<!--Scrip上传 -->
+					<include name="test00330_currentUse_AppiumPython_scriptupload" />
+					<include name="test00340_CurrentUse_editAppiumPythonScript" />
+					<include name="test00370_currentUse_script_close" />
+					
+					<!--  Automation -->
+					<include name="test00410_CurrentUse_automation_Script_AppiumPython" />
+					<include name="test00420_CurrentUse_automation_uploadScript_AppiumPython" />
+					<include name="test00430_currentUse_automation_AppiumPython_cancel" />
+				
+				<!-- after test -->
+					<include name="test90000_releaseAll" />
+					<include name="test99999_tearDown" />
+				
+            </run>
+        </groups>
+
+        <classes>
+            <class name="com.by.automate.testCases.devicepass.user.workspaces.apps.test.Test_FC_test" />
+
+        </classes>
+    </test>
+  
+  
+
+	
+
+</suite>

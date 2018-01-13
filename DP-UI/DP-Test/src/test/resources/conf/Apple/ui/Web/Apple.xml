@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-data>
+
+		<UiMap>
+		    <application>
+				<DefaultPage>homePage</DefaultPage>
+				<AppName>developer apple</AppName>
+				<Version>0.9.45</Version>
+				<Environment>production</Environment>
+				<TestCategory>Web</TestCategory>
+				<NetWork>Local Connection</NetWork>
+				<Description>保存developer apple所有页面的元素定位</Description>
+			</application>
+			<pages>
+				<!-- start a app , default page  -->
+				<page name="homePage" defaultView="home" description = "apple home page" >
+					<view name="home" areas="[home]" />
+					<areas>
+						<home description="登录">
+						    <element name="account"           type="xpath"       value="//ul[@class='ac-gn-list']//a[contains(@href,'account')]" view="login:login"/>
+						    <element name="logo"              type= "id"         value="ac-gn-firstfocus" />
+						</home>
+					 </areas>
+				 </page>
+				 
+				<page name="login" defaultView="login" description = "login page" >
+					<view name="login" areas="[login]" />
+					
+					<areas>
+						<login description="login page">
+						    <element name="userName"     type="id"       value="accountname" />
+						    <element name="password"     type="id"       value="accountpassword" />
+						    <element name="loginButton"  type="id"       value="submitButton2" view="dashboard:overview" />
+						</login>	
+					</areas>
+				</page>
+				
+				<page name="dashboard" defaultView="overview" description = "overview page" >
+					<view name="overview" areas="[overview]" />
+					<view name="cretificates" areas="[cretificates,devices,provisioningProfiles,reviewRegister]" />
+					<areas>
+						<overview description="overview page">
+						    <element name="overview"       type="xpath"       value="//li[@data-menu-option='overview']/a" />
+						    <element name="cretificates"   type="xpath"       value="//main//a[contains(@ng-href,'certificate')]" view="dashboard:cretificates" />
+						    
+						</overview>
+						
+						<cretificates description="cretificates page">
+						    <element name="title"            type="xpath"       value="//h1" />
+						    <element name="deviceAll"        type="xpath"       value="(//li[@class='item devices']//a[@class='navLink'])[1]" />
+						    <element name="contentDevices"   type="xpath"       value="//div[@class='content-toolbar']//span[@class='toolbar-heading-all']" />
+						    <element name="addDevices"       type="xpath"       value="//a[@class='toolbar-button add']" />
+						</cretificates>
+						
+						<devices description="devices page">
+						    <element name="name"            type="xpath"       value="//input[@class='text-input deviceNames validate']" />
+						    <element name="udid"            type="xpath"       value="//input[@class='text-input deviceNumbers validate']" />
+						    <element name="continue"        type="xpath"       value="//a[@class='button small blue right submit']" />
+						    <element name="cancel"          type="xpath"       value="//a[@class='button small left cancel']" />
+						</devices>
+						
+						
+						<reviewRegister description="review and register page">
+						    <element name="message"            type="xpath"       value="//div[@id='failure-devices']/p" />
+						    <element name="cancelButton"       type="xpath"       value="//a[@class='button small left cancel']" />
+						    <element name="cancelBack"         type="xpath"       value="//a[@class='button small center back']" />
+						    <element name="registerButton"     type="xpath"       value="//a[@class='button small blue right submit disabled']" />
+						</reviewRegister>
+						
+						<provisioningProfiles description="provisioning profile page">
+						    <element name="ppAll"            type="xpath"       value="(//li[@class='item provisioning']//a[@class='navLink'])[1]" />
+						    <element name="contentPP"        type="xpath"       value="//div[@class='content-toolbar']//span[@class='toolbar-heading-all']" />
+						    <element name="addPP"            type="xpath"       value="//a[@class='toolbar-button add']" />
+						    <element name="allNames"         type="xpath"       value="//table[@id='grid-table']//tr/td[2]" />
+						    
+						    <element name="editButton"       type="xpath"       value="//tr//a[@class='button small edit-button']" />
+						    
+						</provisioningProfiles>
+						
+						
+					</areas>
+				</page>
+		 	</pages>
+	</UiMap>
+</test-data>

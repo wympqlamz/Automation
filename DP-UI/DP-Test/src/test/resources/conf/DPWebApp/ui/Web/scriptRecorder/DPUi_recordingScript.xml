@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-data>
+
+	<UiMap>
+	    <application>
+			<DefaultPage>recordingScript</DefaultPage>
+			<AppName>Devicepass</AppName>
+			<Version>0.9.45</Version>
+			<Environment>QA</Environment>
+			<TestCategory>Web</TestCategory>
+			<NetWork>Local Connection</NetWork>
+			<Description>保存Devicepass所有页面的元素定位</Description>
+		</application>
+		<pages>
+
+            <page name="recordingScript"  defaultView="selectIosIntoScriptPage"  description="登录界面选择一台ios设备进入脚本录制界面">
+                <view name="selectIosIntoScriptPage" areas="[common,login,selectSingleIosDevice]" />
+                <view name="controlPage" areas="[controlPageIntoScript]" />
+
+                <areas>
+                    <selectSingleIosDevice description="选择一台ios设备进入脚本录制界面">
+                        <element name="controlButton"  				type="xpath"       	value="//button[contains(@ng-click,'control')]/span"  />
+                        <element name="bookButton"  				type="xpath"       	value="//button[contains(@ng-click,'book')]/span"  />
+                        <element name="groupButton"    				type="xpath"       	value="//button[contains(@ng-click,'addToDeviceGroup')]/span"  />
+                        <element name="releaseButton"     			type="xpath"       	value="//button[contains(@ng-click,'releaseSelectedDevice')]/span" />
+                        <element name="allDevices"  				type="xpath"  	   	value="//div[@class='device-photo-small']/img" />
+                        <element name="allDevicesStatus"  			type="xpath"  	    value="//span[contains(@class,'btn-xs device-status')]" />
+                        <element name="devicesNames"  				type="xpath"  		value="//div[contains(@class,'device-name')]" />
+                        <element name="devicesNamesByFirefox"  	type="xpath"  		value="//ul[contains(@class,'devices-icon-view unselectable')]" />
+                        <element name="moreFilters"     			type="xpath"       	value="//span[@class='dropdown'][last()]/a" />
+                        <element name="inputControlTime"           type="xpath"          value="//input[@ng-model='controlTime']" />
+                        <element name="confirmControlBtn"  	    type="xpath" 		    value="//button[contains(@class,'confirm-control')]/span" view="recordingScript:controlPage"/>
+
+                    </selectSingleIosDevice>
+
+                    <controlPageIntoScript description="进入Apps界面点击record a script" >
+                        <element name="menuApps"  	                type="xpath" 		    value="//div[contains(@class,'operate-action-apps')]" />
+
+                    </controlPageIntoScript>
+
+
+
+
+                </areas>
+
+
+
+
+            </page>
+
+	 	</pages>
+	</UiMap>
+</test-data>

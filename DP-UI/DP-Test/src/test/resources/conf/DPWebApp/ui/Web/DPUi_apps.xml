@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-data>
+
+	<UiMap>
+	    <application>
+			<DefaultPage>loginPage</DefaultPage>
+			<AppName>Devicepass</AppName>
+			<Version>0.9.45</Version>
+			<Environment>QA</Environment>
+			<TestCategory>Web</TestCategory>
+			<NetWork>Local Connection</NetWork>
+			<Description>保存Devicepass所有页面的元素定位</Description>
+		</application>
+		<!--
+		e.g. :<element name="upload"  type="xpath"  value="//input[contains(@class,'upload-file')]"  x="" y="" width="" height="" result="" />
+		name:元素的名字
+		type:类型
+		value:元素的定位
+
+		x :该元素的横坐标的值
+		y :该元素的纵坐标的值
+		width :该元素的长
+		height :该元素的宽
+		result:该元素的查找结果
+		-->
+	
+		<pages>
+		   <page name="apps" defaultView="apps" description="apps页面 "> 
+				<view name="apps" areas="[appsUi]"/>
+
+				<areas>
+					<appsUi description="初次进入apps界面的元素验证" >
+						<element name="apps"    type="xpath"       value="(//ul[contains(@ng-class,'workspace')]/li//span)[1]"  view="apps:apps" x="" y="" width="" height="" result="" />
+						<element name="uploadBtn"    type="xpath"       value="//div[@class='upload-file-div']/button"  x="" y="" width="" height="" result="" />
+						<element name="removeBtn"    type="xpath"       value="//button[@title='Remove']/span"  x="" y="" width="" height="" result="" />
+						<element name="searchBar"    type="xpath"       value="//input[contains(@ng-change,'loadAppList')]"  x="" y="" width="" height="" result="" />
+						<element name="searchIcon"   type="xpath"       value="//i[contains(@class,'icon-search')]"  x="" y="" width="" height="" result="" />
+						<element name="selectAllCheckbox"  type="xpath"       value="//input[@ng-checked='selectedAll']"  x="" y="" width="" height="" result="" />
+						<element name="firstScriptCount"   type="xpath"       value="(//span[@uib-tooltip='Automation Scripts'])[1]"  x="" y="" width="" height="" result="" />
+						<element name="firstRunBtn"         type="xpath"       value="(//i[@uib-tooltip='Start automation testing'])[1]"  x="" y="" width="" height="" result="" />
+						<element name="firstEditBtn"        type="xpath"       value="(//i[@uib-tooltip='Edit app information'])[1]"  x="" y="" width="" height="" result="" />
+						<element name="firstRemoveBtn"      type="xpath"       value="(//i[@uib-tooltip='Remove'])[1]"  x="" y="" width="" height="" result="" />
+						<element name="selectPageByFirst"     type="xpath"       value="(//a[contains(@ng-click,'selectPage')])[1]"  x="" y="" width="" height="" result="" />
+						<element name="selectPageByPrevious"  type="xpath"       value="(//a[contains(@ng-click,'selectPage')])[2]"  x="" y="" width="" height="" result="" />
+						<element name="selectPageByNumber1"   type="xpath"       value="(//a[contains(@ng-click,'selectPage')])[3]"  x="" y="" width="" height="" result="" />
+						<element name="selectPageByNumber2"   type="xpath"       value="(//a[contains(@ng-click,'selectPage')])[4]"  x="" y="" width="" height="" result="" />
+						<element name="selectPageByNext"      type="xpath"       value="(//a[contains(@ng-click,'selectPage')])[5]"  x="" y="" width="" height="" result="" />
+						<element name="selectPageByLast"      type="xpath"       value="(//a[contains(@ng-click,'selectPage')])[6]"  x="" y="" width="" height="" result="" />
+						<element name="pageSizeTitle"         type="xpath"       value="//span[@class='lable-page']/span"  x="" y="" width="" height="" result="" />
+						<element name="changePageSizeBar"     type="xpath"       value="//select[contains(@ng-change,'changePageSize')]"  x="" y="" width="" height="" result="" />
+						<element name="showTotalCount"        type="xpath"       value="//span[@class='total-count ng-binding']"  x="" y="" width="" height="" result="" />
+					</appsUi>
+
+
+				<!--<automation description="apps里，进行自动化测试操作">-->
+					<!--<element name="run_test"           		 	type="xpath"       value="//div/div/form/div[1]/h4/span/span"  x="" y="" width="" height="" result="" />-->
+			        <!--<element name="close_uploadApp"     			type="xpath"       value="//div[4]/div/div[1]/span[2]/i[3]" />-->
+			        <!--<element name="uploading_info"      			type="xpath"       value="//div[4]/div/div[1]/span[1]/span[2]" />-->
+			        <!--<element name="checkbox_all"        			type="xpath"       value="//div/div/div/div[2]/table/thead/tr/th[1]/input" />-->
+			        <!--<element name="checkbox_app"        			type="xpath"       value="//td/input[@ng-checked='selectedApksIds[row.id]']" />-->
+			        <!--<element name="search_frame"        			type="xpath"       value=" //div[1]/div[3]/div/div/div/div[1]/input" />-->
+			        <!--<element name="no_record"           			type="xpath"       value="//div[3]/div/div/div/div[2]/div/span" />-->
+			        <!--<element name="remove_allCheckbox"          	type="xpath"       value="//div[3]/div/div/div/div[1]/div/button/span/span" />-->
+			        <!--<element name="remove_confirm"           		type="xpath"       value=" //div/div/div/div[3]/button[1]/span/span" />-->
+			        <!--<element name="start_automation"           		type="xpath"       value="//div[2]/table/tbody/tr[1]/td[10]/span[1]/i"  />-->
+			        <!--<element name="Compatibility_icon"          	type="xpath"       value="//div[@title='Compatibility']"  />-->
+			        <!--<element name="Calabash_icon"           		type="xpath"       value="//div[@title='Calabash']"  />-->
+			        <!--<element name="appiumPython_icon"           	type="xpath"       value="//div[@title='Appium + Python']"  />-->
+			        <!--<element name="UIAutomator_icon"          		type="xpath"       value="//div[@title='UI Automator']"  />-->
+			        <!--<element name="Lettuce_icon"          		 	type="xpath"       value="//div[@title='Lettuce']"  />-->
+			        <!--<element name="title_selectTestMode"    		type="xpath"       value="//div/div/div/form/div[2]/div/ul/li[1]"  />-->
+			        <!--<element name="title_configuration"     		type="xpath"       value="//div/div/div/form/div[2]/div/ul/li[2]"  />-->
+			        <!--<element name="title_selectScript"           	type="xpath"       value="//div/form/div[2]/div/ul/li[2]" />-->
+			     	<!--<element name="title_selectDeiveGroup"          type="xpath"       value="//div/div/form/div[2]/div/ul/li[3]" />-->
+			      	<!--<element name="title_testRunTime"          		type="xpath"       value="//div/form/div[2]/div/ul/li[4]" />-->
+ 			      	<!--<element name="title_runTest_2"          		type="xpath"       value="//div/form/div[2]/div/ul/li[5]" /> 			        -->
+ 			        <!--<element name="previous_button_1"      			type="xpath"       value="//div[2]/div/div/section[3]/div[4]/input[1]" />-->
+			        <!--<element name="previous_button_2"      			type="xpath"       value="//div[2]/div/div/section[4]/div[4]/input[1]" />-->
+			        <!--<element name="previous_button_3"      			type="xpath"       value="//div[2]/div/div/section[5]/div[2]/input[1]" />-->
+			       	<!--<element name="uiautomator_previousButton_1"    type="xpath"       value="//div[2]/div/div/section[2]/div[2]/input[1]" />-->
+			    	<!--<element name="uiautomator_nextButton_1"    	type="xpath"       value="//div[2]/div/div/section[2]/div[2]/input[2]" />-->
+					<!--<element name="testRunTime_previousButton"    	type="xpath"       value="//form/div[2]/div/div/section[4]/div[2]/input[1]" />-->
+					<!--<element name="testRunTime_nextButton"    		type="xpath"       value="//form/div[2]/div/div/section[4]/div[2]/input[2]" />-->
+					<!--<element name="selectDevice_nextButton"    		type="xpath"       value="//form/div[2]/div/div/section[4]/div[2]/input[2]" />-->
+			    	<!--<element name="next_button_1"           		type="xpath"       value="//div[2]/div/div/section[1]/div[2]/input" />-->
+			        <!--<element name="next_button_2"           		type="xpath"       value="//div[2]/div/div/section[3]/div[3]/input[2]" />-->
+			        <!--<element name="next_button_3"           		type="xpath"       value="//div[2]/div/div/section[4]/div[4]/input[2]" />-->
+			       	<!--<element name="next_button_4"           		type="xpath"       value="//div[2]/div/div/section[3]/div[4]/input[2]" />-->
+			        <!--<element name="selectScript_AppName"          	type="xpath"       value="//div/section[3]/div[1]/div/div[1]/div[1]/span/span" />-->
+			      	<!--<element name="selectScript_AppVersion"         type="xpath"       value="//div/section[3]/div[1]/div/div[1]/div[3]/span/span" />-->
+			      	<!--<element name="selectScript_Framework"          type="xpath"       value="//div/section[3]/div[1]/div/div[1]/div[5]/span/span" />-->
+			      	<!--<element name="selectScript_AppFileName"        type="xpath"       value="//div/section[3]/div[1]/div/div[2]/div[1]/span/span" />-->
+			        <!--<element name="selectScript_AppFileSize"        type="xpath"       value="//div/section[3]/div[1]/div/div[2]/div[3]/span/span" />-->
+			        <!--<element name="selectScript_AppUploadTime"      type="xpath"       value="//div/section[3]/div[1]/div/div[2]/div[5]/span/span" />-->
+			        <!--<element name="title_scriptName"      			type="xpath"       value="//div/section[3]/div[1]/div/div[3]/table/thead/tr/th[1]/div/span" />-->
+			        <!--<element name="title_scriptRemark"      		type="xpath"       value="//div/section[3]/div[1]/div/div[3]/table/thead/tr/th[2]/div/span" />-->
+			        <!--<element name="title_scriptFileSize"      		type="xpath"       value="//div/section[3]/div[1]/div/div[3]/table/thead/tr/th[3]/div/span" />-->
+			        <!--<element name="title_scriptUploadTime"      	type="xpath"       value="//div/section[3]/div[1]/div/div[3]/table/thead/tr/th[4]/div/span" />-->
+			       	<!--<element name="uploadFile_button"      			type="xpath"       value="//div[7]/div/div/div/form/div[2]/div/div/section[3]/div[2]/label/input" />-->
+			        <!--<element name="uploadFile_text"      			type="xpath"       value="//div[2]/div/div/section[3]/div[2]/label/button/span" />-->
+			        <!---->
+			        <!--<element name="uploadFile_info"      			type="xpath"       value="//div[2]/div/div/section[3]/div[2]/span" />-->
+			        <!--<element name="uploadFile_name_1"      			type="xpath"       value="//div[2]/div/div/section[3]/div[1]/div/div[3]/table/tbody/tr[1]/td[1]" />-->
+  <!---->
+			        <!--<element name="select_groupName1"           	type="xpath"       value="//div[2]/div/div/section[4]/div[2]/div/div/div" />-->
+			        <!--<element name="testName_input"           		type="xpath"       value="//div/div/section[5]/div[1]/div[1]/div[1]/input" />-->
+			        <!--<element name="Run_button"           			type="xpath"       value="//div[2]/div/div/section[5]/div[2]/input[2]" />-->
+			        <!--<element name="success_info"           			type="xpath"       value="//div/div/section[6]/div[1]/div/div[1]/h4/span[1]" />-->
+			        <!--<element name="control_button"           		type="xpath"       value="//div[2]/div/div/section[6]/div[1]/div/div[1]/h4/a[2]/span" />-->
+			        <!--<element name="testResult_button"           	type="xpath"       value="//div[2]/div/div/section[6]/div[1]/div/div[1]/h4/a[1]/span" />-->
+			        <!--<element name="close_button"           			type="xpath"       value="//div[2]/div/div/section[6]/div[2]/input" />-->
+			      <!---->
+			        <!--<element name="previous_button_4"           	type="xpath"       value="//div[2]/div/div/section[3]/div[3]/input[1]" />					      -->
+			        <!--<element name="close_RunTest"           		type="xpath"       value="//div[7]/div/div/div/form/div[1]/button"  />-->
+			        <!--<element name="cpu_input"           			type="xpath"       value="//input[@ng-model='options.cpuDumpInterval']" />-->
+			        <!--<element name="mem_input"           			type="xpath"       value="//input[@ng-model='options.memDumpInterval']" />-->
+					<!--<element name="screenInterval_input"            type="xpath"       value="//input[@ng-model='options.screenshotInterval']" />-->
+			        <!--<element name="screenCount_input"           	type="xpath"       value="//input[@ng-model='options.screenshotCount']" />-->
+			        <!--<element name="testInterval_input"           	type="xpath"       value="//input[@ng-model='options.monkeyTestRepeatInterval']" />-->
+			        <!--<element name="testRepeat_input"           		type="xpath"       value="//input[@ng-model='options.monkeyTestRepeatCount']" />-->
+			        <!--<element name="testTouch_input"           		type="xpath"       value="//input[@ng-model='options.monkeyTestPctTouch']" />-->
+			        <!--<element name="testMotion_input"           		type="xpath"       value="//input[@ng-model='options.monkeyTestPctMotion']" />-->
+			        <!--<element name="testSwitch_input"           		type="xpath"       value="//input[@ng-model='options.monkeyTestPctAppswitch']" />-->
+			        <!--<element name="testKeys_input"           		type="xpath"       value="//input[@ng-model='options.monkeyTestPctSyskeys']" />-->
+			        <!--<element name="maxDepth_input"           		type="xpath"       value="//input[@ng-model='options.maxUiNavDepth']" />-->
+			        <!--<element name="maxElement_input"           		type="xpath"       value="//input[@ng-model='options.maxUiNavElement']" />-->
+			   	    <!--<element name="maxDuration_input"           	type="xpath"       value="//input[@ng-model='options.maxUiNavDuration']" />-->
+			 	   	<!--<element name="default_value"           		type="xpath"       value="//input[@ng-click='defaultVal()']" />					-->
+			 	   	<!--&lt;!&ndash; UiAutomator test &ndash;&gt;-->
+			 	   	<!--<element name="testClass_input"    				type="xpath"       value="//input[@ng-model='options.testClassName']" />-->
+			 	   	<!--<element name="testMethod_input"    			type="xpath"       value="//input[@ng-model='options.testMethodName']" /> -->
+			 	   	<!--<element name="selectDevice_groupName"    		type="xpath"       value="//div[2]/div[@ng-repeat='group in deviceGroups']" /> -->
+			 	   	<!--<element name="selectDevice_deviceName"    		type="xpath"       value="//div[2]/div/div/section[4]/div[1]/div/div[2]/div/div[3]/div/span[1]" /> -->
+				<!--</automation>-->
+						<!---->
+				<!--<GroupsAndDevices description="devices和 group （前置条件，创建组并加入设备，再删除组和设备）">-->
+					<!--<element name="groups"         					type="xpath"       	value="(//ul[contains(@ng-class,'devices')]/li//span)[4]"  />-->
+					<!--<element name="removeButton"         			type="xpath"        value="//button[@ng-click='batchRemoveDeviceGroups()']" />-->
+					<!--<element name="allGroupName"         			type="xpath"        value="//tr[@ng-repeat='row in deviceGroups']//td[2]" />-->
+					<!--<element name="allGroupCheckBox"     			type="xpath"        value="//input[contains(@ng-checked,'selectedDeviceGroupsIds')]" />-->
+					<!--<element name="confirmRemoveDeviceGourp"     	type="xpath"        value="//div[@class='modal-footer']//button[1]" />-->
+					<!--<element name="all_group"    					type="xpath"        value="//input[contains(@ng-checked,'selectedAll')]" />-->
+					<!--<element name="groupButton"    					type="xpath"       	value="//button[contains(@class,'btn-add-device-to-group')]"  />-->
+				    <!--<element name="submit_button"                   type="xpath"        value="(//add-device-to-device-group-modal//button)[2]"  />-->
+					<!--<element name="phone_status"                    type="xpath"        value="//span[contains(@class,'device-status')]" />-->
+					<!--<element name="groupBtn"                  		type="xpath"        value="//button[contains(@ng-click,'addToDeviceGroup')]" />-->
+					<!--<element name="closeBtn"                  	 	type="xpath"        value="//button[@class='close']" />-->
+					<!--<element name="controlLabel1"              		type="xpath"        value="(//label[@class='control-label']/span)[1]" />-->
+					<!--<element name="groupName1"                 		type="xpath"        value="(//div[@class='col-sm-4']//span)[1]" />-->
+					<!--<element name="inputName"                 		type="xpath"        value="//input[@name='groupName']" />-->
+					<!--<element name="targetType2"               		type="xpath"        value="(//input[@ng-model='targetType'])[2]" />-->
+					<!--<element name="controlLabel2"             		type="xpath"        value="(//label[@class='control-label']/span)[2]" />-->
+					<!--<element name="groupName2"                		type="xpath"        value="(//div[@class='col-sm-4']//span)[2]" />-->
+					<!--<element name="existedName"               		type="xpath"        value="//select[@ng-model='targetDeviceGroup']" />-->
+					<!--<element name="cancelBtn"                 	 	type="xpath"        value="//button[contains(@ng-click,'cancel')]/span" />-->
+					<!--<element name="submitBtn"                  		type="xpath"        value="(//add-device-to-device-group-modal//button)[2]" />-->
+					<!--<element name="apps"          			 		type="xpath"       	value="(//ul[contains(@ng-class,'workspace')]/li//span)[1]" />-->
+					<!--<element name="upload"                      	type="xpath"      	value="//input[contains(@class,'upload-file')]" />-->
+					<!--<element name="devices"        					type="xpath"       	value="(//ul[contains(@ng-class,'devices')]/li//span)[3]"/>-->
+					<!--<element name="allDevices"  					type="xpath"  		value="//div[@class='device-photo-small']/img" />-->
+					<!--<element name="allDevicesStatus"  				type="xpath"  		value="//span[contains(@class,'btn btn-xs device-status')]" />-->
+					<!--<element name="devicesNames"  					type="xpath"  		value="//div[@class='device-name']" />-->
+					<!--<element name="devicesNamesByFirefox"  			type="xpath"  		value="//ul[contains(@class,'devices-icon-view unselectable')]/li" />-->
+				<!--</GroupsAndDevices>-->
+			<!--</areas>-->
+		<!--</page>-->
+				<!---->
+				<!---->
+				<!---->
+				<!---->
+		<!--<menglei/>-->
+		<!--<page name="appspage" defaultView="apps" description="app"> -->
+			<!--<view name="apps" areas="[app]"/>  -->
+						<!---->
+				<!--<areas>-->
+				   <!--<app description="App">-->
+				   <!---->
+						<!--&lt;!&ndash; app(清空) &ndash;&gt;-->
+						<!--<element name="apps"           type="xpath"       value="(//ul[contains(@ng-class,'workspace')]/li//span)[1]" />-->
+						<!--<element name="apps_norecords"                   type="xpath"       value="/html/body/div[1]/div[3]/div/div/div/div[2]/div/span"/>-->
+						<!--<element name="selectedAll"                 type="xpath"       value="//input[contains(@ng-click,'toggleSelectAll()')]"/>-->
+						<!--<element name="remove"                      type="xpath"       value="//button[contains(@class,'btn-remove')]/span/span"/>-->
+						<!--<element name="remove-cancel"               type="xpath"       value="//button[contains(@ng-click,'cancel()')]/span/span"/>-->
+						<!--<element name="remove-ok"                   type="xpath"       value="//button[contains(@ng-click,'ok()')]/span/span"/>-->
+						<!---->
+						<!--&lt;!&ndash; app(编辑/查找/清空) &ndash;&gt;-->
+						<!--<element name="editApp"                     type="xpath"       value="//i[contains(@uib-tooltip,'Edit app information')]"/>-->
+						<!--<element name="Apprename"                   type="xpath"       value="//input[contains(@name,'fileName')]"/>-->
+						<!--<element name="submit"                      type="xpath"       value="//button[contains(@ng-click,'submit()')]"/>-->
+						<!--<element name="search"                      type="xpath"       value="//input[contains(@type,'search')]"/>-->
+						<!--<element name="appname"                     type="xpath"       value="//tr[contains(@ng-repeat,'row in apps')]/td[5]"/>-->
+						<!--<element name="app-delete"                  type="xpath"       value="//i[contains(@uib-tooltip,'Remove')]"/>-->
+						<!---->
+						<!--&lt;!&ndash; 错误消息 &ndash;&gt;-->
+						<!--<element name="type_error_prompt"           type="xpath"       value="//div[contains(@class,'growl-message ng-binding')]/h4"/>-->
+						<!--<element name="type_error_prompt_click"     type="xpath"       value="//button[contains(@ng-click,'growlMessages.deleteMessage(message)')]"/>-->
+						<!---->
+						<!--&lt;!&ndash; 版本 &ndash;&gt;-->
+						<!--<element name="ReleaseNotes"                type="xpath"       value="//*[text()='Release Notes']"/>-->
+						<!--<element name="Help"     type="xpath"       value="//*[text()='Help']"/>-->
+						<!--<element name="CurrentVersion"     type="xpath"       value="//span[contains(@class,'current-version-device ng-binding')]"/>-->
+						<!--<element name="cancel"    type="xpath"       value="//button[contains(@ng-click,'cancel()')]"/>-->
+						<!---->
+						<!--&lt;!&ndash; script &ndash;&gt;-->
+						<!--<element name="script"     type="xpath"       value="//span[contains(@ng-click,'automationScripts(row)')]"/>-->
+						<!--<element name="scriptSelectFile"    type="xpath"       value="//input[contains(@ng-file-select,'preUploadScript($files)')]"/>-->
+						<!--<element name="scriptUpload"     type="xpath"       value="//button[contains(@ng-click,'uploadScript()')]/span/span"/>-->
+						<!--<element name="script_edit"     type="xpath"       value="//span[contains(@ng-click,'editScripts(row)')]/i"/>-->
+						<!--<element name="script_rename"                   type="xpath"       value="//input[contains(@name,'fileName')]"/>-->
+						<!--<element name="script_submit"                      type="xpath"       value="//button[contains(@ng-click,'submit()')]"/>-->
+						<!--<element name="script-remove"     type="xpath"       value="//span[contains(@ng-click,'removeScripts(row)')]/i"/>-->
+						<!--<element name="script-remove-confirm"     type="xpath"      value="//button[contains(@ng-click,'ok()')]/span/span"/>-->
+						<!--<element name="script_norecords"     type="xpath"       value="//div[contains(@class,'list_empty')]/span"/>-->
+						<!---->
+						<!---->
+						<!--&lt;!&ndash; Start_automation &ndash;&gt;-->
+						<!--<element name="Start_automation"    type="xpath"       value="//i[contains(@uib-tooltip,'Start automation testing')]"/>-->
+						<!--<element name="Appium_Python"    type="xpath"       value="//div[contains(@title,'Appium + Python')]"/>-->
+						<!--<element name="UI_Automator"    type="xpath"       value="//div[contains(@title,'UI Automator')]"/>-->
+						<!--<element name="UI_Automator_next"    type="xpath"       value="//input[contains(@value,'Next')]"/>-->
+						<!--<element name="UI_Automator_uploadedname"    type="xpath"       value="//tr[contains(@ng-repeat,'row in appScripts')]/td[1]"/>-->
+						<!--<element name="UI_Automator_next2"    type="xpath"       value="/html/body/div[7]/div/div/div/form/div[2]/div/div/section[2]/div[2]/input[2]"/>-->
+						<!--<element name="Test_Class_Name"    type="xpath"       value="//input[contains(@name,'options.testClassName')]"/>-->
+						<!--<element name="Test_Method_Name"    type="xpath"       value="//input[contains(@name,'options.testMethodName')]"/>-->
+						<!---->
+						<!--&lt;!&ndash; upload进度条 &ndash;&gt;-->
+						<!--<element name="upload"                      type="xpath"       value="//input[contains(@class,'upload-file ng-isolate-scope')]" />-->
+						<!--<element name="progressBar"                 type="xpath"       value="//div[@class='progress-bar']/span" />-->
+										<!---->
+
+										<!---->
+										<!---->
+										<!---->
+										<!---->
+										<!---->
+						<!--&lt;!&ndash; CurrentUse &ndash;&gt;-->
+						<!--<element name="allDevices"  			 	    type="xpath"  		value="//a[contains(@ng-href,'/#!/devices')]" />-->
+						<!---->
+						<!---->
+						<!---->
+						<!--<element name="devices"  					type="xpath"  		value="//div[contains(@ng-click,'toggleSelectDevice(device, group)')]" />-->
+						<!--<element name="CurrentUse"  					type="xpath"  		value="//a[contains(@ng-href,'/#!/control')]" />-->
+						<!---->
+						<!---->
+						<!---->
+						<!--<element name="allDevicesStatus"  				type="xpath"  		value="//span[contains(@class,'btn btn-xs device-status')]" />-->
+						<!--<element name="devicesNames"  					type="xpath"  		value="//div[contains(@class,'device-name')]" />-->
+						<!---->
+						<!--<element name="control_device"  				type="xpath"  		value="//button[contains(@ng-click,'control()')]" />-->
+						<!--<element name="confirm"                         type="xpath"        value="//button[contains(@class,'confirm-control')]"/>-->
+						<!--<element name="currentUse_apps_click"  					type="xpath"  		value="//i[contains(@class,'icon iconfont icon-cloud-up')]" />-->
+						<!--<element name="currentUse_apps_remove"  				type="xpath"  		value="//div[contains(@ng-click,'batchRemoveApks()')]" />-->
+						<!--<element name="currentUse_editApp"                     type="xpath"       value="//i[contains(@title,'Edit app information')]"/>-->
+						<!--<element name="currentUse_rename"                   type="xpath"       value="//input[contains(@name,'fileName')]"/>-->
+						<!--<element name="currentUse_submit"                      type="xpath"       value="//button[contains(@ng-click,'submit()')]"/>-->
+						<!--<element name="currentUse_selectedAll"                 type="xpath"       value="//input[contains(@ng-click,'toggleSelectAll()')]"/>-->
+						<!---->
+						<!--&lt;!&ndash;CurrentUse.remove&ndash;&gt;-->
+						<!--<element name="currentUse_remove"                      type="xpath"       value="//button[contains(@ng-click,'batchRemoveApks()')]/span/span"/>-->
+						<!--<element name="currentUse_remove-cancel"               type="xpath"       value="//button[contains(@ng-click,'cancel()')]/span/span"/>-->
+						<!--<element name="currentUse_remove-ok"                   type="xpath"       value="//button[contains(@ng-click,'ok()')]/span/span"/>-->
+						<!---->
+						<!--&lt;!&ndash; currentUse_script &ndash;&gt;-->
+						<!--<element name="currentUse_script"    			 type="xpath"       value="//span[contains(@ng-click,'automationScripts(row)')]"/>-->
+						<!--<element name="currentUse_scriptSelectFile"   	 type="xpath"       value="//input[contains(@ng-file-select,'preUploadScript($files)')]"/>-->
+						<!--<element name="currentUse_scriptUpload"     		type="xpath"       value="//button[contains(@ng-click,'uploadScript()')]/span/span"/>-->
+						<!--<element name="currentUse_script_edit"     			type="xpath"       value="//span[contains(@ng-click,'editScripts(row)')]/i"/>-->
+						<!--<element name="currentUse_script_rename"                   type="xpath"       value="//input[contains(@name,'fileName')]"/>-->
+						<!--<element name="currentUse_script_submit"                      type="xpath"       value="//button[contains(@ng-click,'submit()')]/span/span"/>-->
+						<!--<element name="currentUse_script-remove"    		 type="xpath"       value="//span[contains(@ng-click,'removeScripts(row)')]/i"/>-->
+						<!--<element name="currentUse_script-remove-confirm"     type="xpath"      value="//button[contains(@ng-click,'ok()')]/span/span"/>-->
+						<!--<element name="currentUse_script_cancel"    type="xpath"       value="//button[contains(@ng-click,'cancel()')]"/>-->
+						<!--<element name="currentUse_script_norecords"    		 type="xpath"       value="//div[contains(@class,'list_empty')]/span"/>-->
+					    <!--<element name="currentUse_apps_norecords"    		 type="xpath"       value="//div[contains(@class,'list_empty')]/span"/>-->
+						<!---->
+						<!---->
+						<!---->
+						<!--&lt;!&ndash;currentUse_ Start_automation &ndash;&gt;-->
+						<!--<element name="currentUse_Start_automation"    type="xpath"       value="//i[contains(@title,'Start automation testing')]"/>-->
+						<!--<element name="currentUse_Compatibility"    type="xpath"       value="//div[contains(@title,'Compatibility')]"/>-->
+						<!--<element name="currentUse_Appium_Python"    type="xpath"       value="//div[contains(@title,'Appium + Python')]"/>-->
+						<!--<element name="currentUse_UI_Automator"    type="xpath"       value="//div[contains(@title,'UI Automator')]"/>-->
+						<!--<element name="currentUse_UI_Automator_next"    type="xpath"       value="//input[contains(@value,'Next')]"/>-->
+						<!--<element name="currentUse_Compatibility_run"    type="xpath"       value="//input[contains(@value,'Run')]"/>-->
+						<!--<element name="currentUse_UI_Automator_uploadedname"    type="xpath"       value="//tr[contains(@ng-repeat,'row in appScripts')]/td[1]"/>-->
+						<!--<element name="currentUse_UI_Automator_next2"    type="xpath"       value="/html/body/div[7]/div/div/div/form/div[2]/div/div/section[2]/div[2]/input[2]"/>-->
+						<!--<element name="currentUse_Compatibility_next2"    type="xpath"       value="/html/body/div[7]/div/div/div/form/div[2]/div/div/section[3]/div[3]/input[2]"/>-->
+						<!--<element name="currentUse_Compatibility_close"    type="xpath"       value="//input[contains(@ng-click,'cancel()')]"/>-->
+						<!--<element name="currentUse_Test_Class_Name"    type="xpath"       value="//input[contains(@name,'options.testClassName')]"/>-->
+						<!--<element name="currentUse_Test_Method_Name"    type="xpath"       value="//input[contains(@name,'options.testMethodName')]"/>-->
+						<!--<element name="currentUse_releaseAll"    type="xpath"       value="//button[contains(@ng-click,'releaseAll()')]"/>-->
+						<!--<element name="control_time"    type="xpath"       value="//input[contains(@ng-model,'controlTime')]"/>-->
+						<!---->
+						<!---->
+						<!--&lt;!&ndash;reort &ndash;&gt;-->
+						<!--<element name="Test_Report"           type="xpath"       value="(//ul[contains(@ng-class,'workspace')]/li//span)[2]" />-->
+						<!--<element name="reprot_remove"    type="xpath"       value="//div[contains(@ng-click,'removeRunNoReports(row)')]"/>-->
+						<!---->
+						<!--<element name="reprot_download"    type="xpath"       value="//div[contains(@ng-click,'downLoadTestReportDetail(row.testId)')]"/>-->
+						<!--<element name="reprot_closebutton"    type="xpath"       value="//div[contains(@ng-click,'showButton(row.testId,0)')]"/>-->
+						<!---->
+						<!--<element name="reprot_remove_confirm"     type="xpath"      value="//button[contains(@ng-click,'ok()')]"/>-->
+						<!---->
+						<!---->
+						<!---->
+						<!---->
+						<!--<element name="waitingMessage"              type="xpath"       value="(//div[@ng-bind-html='message.text'])[1]" />-->
+						<!--<element name="successMessage"              type="xpath"       value="(//div[@ng-bind-html='message.text'])[2]" />-->
+						<!--<element name="RunAppButton"                type="xpath"       value="(//span[contains(@ng-click,'createAutomationTask')]/i)[1]" />-->
+						<!--<element name="configurationImage"          type="xpath"       value="//div[@title='Compatibility']/img" />-->
+						<!--<element name="configurationName"           type="xpath"       value="//div[@title='Compatibility']/div" />-->
+						<!--<element name="nextButBySelectTestMode"     type="xpath"       value="//section[1][@ng-transclude='']/div//input" />  -->
+						<!--<element name="nextButByConfiguration"      type="xpath"       value="//input[contains(@ng-click,'ConfigurableOption')]" />-->
+						<!--<element name="selectDeviceGroup"           type="xpath"       value="//div[contains(@ng-click,'toggleDeviceGroup')]/div" />-->
+						<!--<element name="nextButBySelectDeviceGroup"  type="xpath"       value="//input[contains(@ng-disabled,'selectedDeviceGroupsLength')]" />-->
+						<!--<element name="testName"                    type="xpath"       value="//input[@name='testName']" />-->
+						<!--<element name="runButByTestName"            type="xpath"       value="//input[contains(@ng-click,'run')]" />-->
+						<!--<element name="deviceListName"              type="xpath"       value="//span[@ng-repeat='device in selectedDevices']" />-->
+						<!--<element name="testRusultButton"            type="xpath"       value="//a[contains(@ng-click,'showTestResult')]" />	-->
+						<!--<element name="testName1"                   type="xpath"       value="//tr[1][@ng-repeat='row in runNoReports']//a" />-->
+						<!--<element name="testReportButton"            type="xpath"       value="(//li[@class='nav-title-bg']//span)[1]" />-->
+						<!---->
+					<!--</app>-->
+				</areas>
+			</page>
+		
+	 	</pages>
+	</UiMap>
+</test-data>

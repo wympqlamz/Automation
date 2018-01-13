@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-data>
+
+	<UiMap>
+	    <application>
+			<DefaultPage>devices</DefaultPage>
+			<AppName>Devicepass</AppName>
+			<Version>0.9.45</Version>
+			<Environment>QA</Environment>
+			<TestCategory>Web</TestCategory>
+			<NetWork>Local Connection</NetWork>
+			<Description>保存Devicepass所有页面的元素定位</Description>
+		</application>
+
+		<pages>
+		<page name="devices">
+		    <view name="AndroidsAndIos"      areas="[login,common,groupview,controlWindow,controlPage]"/>
+
+		  <areas>
+				<groupview description="devices页面的组视图">
+                    <element name="norecords"                    type="xpath"          value="//div[1]/div[3]/div/div/div/div[2]/div/span"/>
+                    <element name="LeftMenuScreenshots"         type="xpath"          value="(//ul[contains(@ng-class,'workspace')]/li//span)[4]" />
+                    <element name="Load_more"                    type="xpath"          value="//div[contains(@ng-click,'loadMore()')]"/>
+                    <element name="screenshots-selectAll"       type="xpath"          value="//button[contains(@ng-click,'toggleSelectAll()')]"/>
+                    <element name="remove"                        type="xpath"          value="//div[1]/div[3]/div/div/div/div[1]/div[1]/button[3]/span/span"/>
+                    <element name="remove-confirm"               type="xpath"          value="//div[1]/div/div/div/div[3]/button[1]/span/span"/>
+                    <element name="controlButton"  				type="xpath"       	value="//button[contains(@ng-click,'control()')]/span"/>
+                    <element name="bookButton"  				    type="xpath"       	value="//button[contains(@ng-click,'book')]/span"  />
+                    <element name="groupButton"    				type="xpath"       	value="//button[contains(@ng-click,'addToDeviceGroup')]/span"  />
+                    <element name="releaseButton"     			type="xpath"       	value="//button[contains(@ng-click,'releaseSelectedDevice')]/span" />
+                    <element name="allDevices"  				    type="xpath"  	   	    value="//div[@class='device-photo-small']/img" />
+                    <element name="allDevicesStatus"  			type="xpath"  		    value="//span[contains(@class,'btn-xs device-status')]" />
+                    <element name="LeftMenuAllDevices"           type="xpath"          value="(//ul[contains(@ng-class,'devices')]/li//span)[3]" />
+                    <element name="devicesNames"  				type="xpath"  		    value="//div[contains(@class,'device-name')]" />
+                    <element name="devicesNamesByFirefox"  		type="xpath"  		    value="//ul[contains(@class,'devices-icon-view unselectable')]" />
+                    <element name="moreFilters"     			    type="xpath"       	value="//span[@class='dropdown'][last()]/a" />
+              </groupview>
+
+              <controlWindow description="控制设备 确认页面 " >
+                  <element name="modalTitle"  		     type="xpath" 		value="//div[1][contains(@class,'modal-header dialog-header-errorX')]" />
+                  <element name="textInfo"  	             type="xpath" 		value="//div[contains(@class,'alert alert-info padding-15 ng-scope')]/span" />
+                  <element name="inputControlTime"        type="xpath"     value="//input[@ng-model='controlTime']" />
+                  <element name="cancelControlBtn"  	     type="xpath" 		value="(//button[contains(@ng-click,'cancel')])[2]" />
+                  <element name="confirmControlBtn"  	 type="xpath" 		value="//button[contains(@class,'confirm-control')]/span" />
+              </controlWindow>
+
+              <controlPage description="控制设备成功 进入到控屏界面">
+                  <element name="controlAndroidSuccess"  		   type="xpath" 		  value="//div[2]/div/div[1]/div"/>
+                  <element name="controlIosSuccess"  		       type="xpath" 		  value="//div[2]/div/div[2]/div"/>
+                  <element name="androidDeviceName"                 type="xpath"          value="//div[1]/div/div/div[1]/div/div/div/div[1]/div/div[2]/a/span"/>
+                  <element name="iosDeviceName"                     type="xpath"          value="//div[2]/div/div/div[1]/div/div/div/div[1]/div/div[2]/a/span"/>
+              <!--多个Android设备xpath-->
+                  <element name="AndroidDeviceName1"               type="xpath"           value="//div[1]/div/div/div[1]/div/div/div/div[1]/div/div[2]/a/span"/>
+                  <element name="AndroidDeviceName2"               type="xpath"           value="//div[2]/div/div/div/div/div/div/div[1]/div/div[2]/a/span"/>
+                  <element name="controlAndroidSuccess1"           type="xpath"           value="//div[1]/div"/>
+                  <element name="controlAndroidSuccess2"           type="xpath"           value="//div[2]/div"/>
+
+                  <!-- Current Use公用部分 顶部按钮 -->
+                  <element name="TopScreenshotBtn"       type="xpath"          value="//div[1]/div[3]/div/div/div/div[1]/button[1]/span/span" />
+                  <element name="TakeScreenshotMeg"      type="xpath"          value="//div[contains(@class,'growl-bar ng-isolate-scope')]"/>
+                  <element name="ReloadAll"  		         type="xpath"       	value="//button[@class='btn btn-sm btn-primary btn-reload-all']"/>
+                  <element name="ReleaseAll"  		     type="xpath"       	value="//button[@class='btn btn-sm btn-primary btn-release-all']"/>
+                  <element name="RenewDevices"  		    type="xpath"       	value="//button[@class='btn btn-sm btn-primary btn-renew-devices']"/>
+                  <element name="setDefinition"  		type="xpath"       	value="(//span[@class='unselectable select-dropdown extend-columns dropdown'])[1]"/>
+                  <!-- 点击setDefinition菜单后出现清晰度下拉选项 -->
+                  <element name="UD"  				type="xpath"       	value="//span[text()='Ultra Definition']"/>
+                  <element name="HD"  				type="xpath"       	value="//span[text()='High Definition']"/>
+                  <element name="SD"  				type="xpath"       	value="//span[text()='Standard Definition']"/>
+                  <element name="LD"  				type="xpath"       	value="//span[text()='Low Definition']"/>
+                  <element name="ExtraInfo"  		type="xpath"       	value="//div[1]/div[3]/div/div/div/div[1]/span[2]/a"/>
+                  <!-- 点击ExtraInfo菜单后出现的选项 -->
+                  <element name="ScreenSizelable"  	  type="xpath"       	value="(//li[contains(@ng-click,'toggleExtendColumns')])[1]//label"/>
+                  <element name="ScreenSizecheckbox"   type="xpath"       	value="(//li[contains(@ng-click,'toggleExtendColumns')])[1]//label/input"/>
+                  <element name="Versionlable"  		  type="xpath"       	value="(//li[contains(@ng-click,'toggleExtendColumns')])[2]//label"/>
+                  <element name="Versioncheckbox"  	  type="xpath"       	value="(//li[contains(@ng-click,'toggleExtendColumns')])[2]//label/input"/>
+                  <element name="Brandlable"  		  type="xpath"       	value="(//li[contains(@ng-click,'toggleExtendColumns')])[3]//label"/>
+                  <element name="Brandcheckbox"  	  type="xpath"       	value="(//li[contains(@ng-click,'toggleExtendColumns')])[3]//label/input"/>
+                  <element name="Platformlable"  	  type="xpath"       	value="(//li[contains(@ng-click,'toggleExtendColumns')])[4]//label"/>
+                  <element name="Platformcheckbox"  	  type="xpath"       	value="(//li[contains(@ng-click,'toggleExtendColumns')])[4]//label/input"/>
+                  <element name="IMEIlable"  			  type="xpath"       	value="(//li[contains(@ng-click,'toggleExtendColumns')])[5]//label"/>
+                  <element name="IMEIcheckbox"  		  type="xpath"       	value="(//li[contains(@ng-click,'toggleExtendColumns')])[5]//label/input"/>
+                  <element name="ICCIDlable"  		  type="xpath"       	value="(//li[contains(@ng-click,'toggleExtendColumns')])[6]//label"/>
+                  <element name="ICCIDcheckbox"  	  type="xpath"       	value="(//li[contains(@ng-click,'toggleExtendColumns')])[6]//label/input"/>
+                  <element name="Widthlable"  		  type="xpath"       	value="(//li[contains(@ng-click,'toggleExtendColumns')])[7]//label"/>
+                  <element name="Widthcheckbox"  	  type="xpath"       	value="(//li[contains(@ng-click,'toggleExtendColumns')])[7]//label/input"/>
+                  <element name="Heightlable"  		  type="xpath"       	value="(//li[contains(@ng-click,'toggleExtendColumns')])[8]//label"/>
+                  <element name="Heightcheckbox"  	  type="xpath"       	value="(//li[contains(@ng-click,'toggleExtendColumns')])[8]//label/input"/>
+                  <element name="ExtraInfoopen"  	  type="xpath"       	value="//span[@class='select-dropdown extend-columns dropdown open']"/>
+                  <!-- 点击ShowScreen菜单后出现的选项 -->
+                  <element name="ShowScreen"  		  type="xpath"       	value="(//span[@class='unselectable select-dropdown extend-columns in-use-device dropdown'])"/>
+                  <element name="devicelable"  		  type="xpath"       	value="//span[contains(@class,'select-dropdown extend-columns dropdown open')]//label"/>
+                  <element name="devicecheckbox"  	  type="xpath"       	value="//span[contains(@class,'select-dropdown extend-columns dropdown open')]//label/input"/>
+                  <element name="syncon"  	          type="xpath"       	value="//span[contains(@class,'unselectable syncon')]"/>
+                  <!--设备右下角倒计时-->
+                  <element name="Timeleft"              type="xpath"        value="//div[1]/div[3]/div/div/div/div[2]/div[1]/div[1]/div/div/div[1]/div/div/div/div[4]/div/div[1]/div[2]" />
+                  <element name="inputRenewTime"        type="xpath"        value="//div[1]/div/div/form/div[3]/div[2]/div[1]/div[1]/input" />
+                  <element name="androidrestTime"       type="xpath"        value="//div[1]/div/div/form/div[3]/div[2]/div[2]/div[2]/div[2]/label/span[2]"/>
+                  <element name="iosrestTime"           type="xpath"        value="//div[1]/div/div/form/div[3]/div[2]/div[2]/div[2]/div[1]/label/span[2]"/>
+                  <element name="RenewConfirm"          type="xpath"        value="/html/body/div[1]/div/div/form/div[4]/button[1]/span/span" />
+                  <!-- 设备屏幕右侧菜单 -->
+                  <!-- 竖屏设备屏幕右侧菜单 -->
+                  <element name="DefaultMenu"  		   type="xpath"       	value="//div[contains(@class,'device-operate-action-handle operate-action-screenshot active')]/i"/>
+                  <element name="ScreenshotMenu"  	   type="xpath"       	value="//div[contains(@class,'device-operate-action-handle operate-action-screenshot')]/i" />
+                 <!--中间部分的screenshots按钮-->
+                  <element name="ScreenshotBtn"  	          type="xpath"         value="//div[1]/div[3]/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div[2]/div/div[1]/button[1]/span/span"/>
+                  <element name="?/?androidpictureinfo"        type="xpath"        value="//div[1]/div[1]/span[2]" />
+                  <element name="?/?iospictureinfo"            type="xpath"        value="//div[2]/div[1]/span[2]" />
+                  <element name="DownloadBtn"  		          type="xpath"       	value="//button[contains(@ng-click,'downLoad')]/span"/>
+                  <element name="MoreImagesBtn"                type="xpath"       	value="//button[contains(@ng-click,'moreImage')]/span"/>
+                  <element name="SelectAllBtn"  		          type="xpath"       	value="//button[contains(@ng-click,'toggleSelectAll')]/span"/>
+                  <element name="devicenamelabel"  	          type="xpath"       	value="//button[contains(@ng-click,'moreImage')]/span"/>
+                  <element name="AppsMenu"  		       type="xpath"       	value="//div[contains(@class,'device-operate-action-handle operate-action-apps')]/i"   />
+                  <element name="AdvancedMenu"  		   type="xpath"       	value="//div[contains(@class,'device-operate-action-handle operate-action-advanced')]/i" />
+                  <element name="FileExploreMenu"  	   type="xpath"       	value="//div[contains(@class,'device-operate-action-handle operate-action-explorer')]/i"  />
+                  <element name="InfoMenu"  		       type="xpath"       	value="//div[contains(@class,'device-operate-action-handle operate-action-info')]/i" />
+                  <element name="LogsMenu"  		       type="xpath"       	value="//div[contains(@class,'device-operate-action-handle operate-action-logs')]/i"  />
+                  <element name="screenshots-android"        type="xpath"        value="//div[1]/div[3]/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div[2]/div/div[2]/div[2]/div[1]/span[1]"/>
+                  <element name="screenshots-ios"            type="xpath"        value="//div[1]/div[3]/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div[2]/div/div[2]/div[1]/div[1]/span[1]"/>
+
+              </controlPage>
+          </areas>
+		</page>
+
+		   <page name="screenshots">
+				<view name="thumbnail-view" areas="[common-screenshots,thumbnail]"/>
+				<areas>
+				<common-screenshots description="上边部分按钮">
+					<element name="button-download"           		type="xpath"       value="//div[1]/div[3]/div/div/div/div[1]/div[1]/button[1]" />
+			        <element name="select_all"     			        type="xpath"       value="//div[1]/div[3]/div/div/div/div[1]/div[1]/button[2]/span/span" />
+			        <element name="button-remove"      			    type="xpath"       value="//div[1]/div[3]/div/div/div/div[1]/div[1]/button[3]/span/span" />
+
+			        <element name="search_DeviceName"        		type="xpath"       value="//div[1]/div[3]/div/div/div/div[1]/input" />
+			        <element name="showing"        			        type="xpath"       value="//div[1]/div[3]/div/div/div/div[1]/span[2]" />
+			        <element name="thumbnail-icon"           		type="xpath"       value="//div[1]/div[3]/div/div/div/div[1]/div[2]/i[1]" />
+			        <element name="list-icon"          	            type="xpath"       value="//div[1]/div[3]/div/div/div/div[1]/div[2]/i[2]" />
+			    </common-screenshots>
+
+			    <thumbnail description="thumbnail部分">
+			        <element name="thumbnail-icon-detail"                     type="xpath"       value="//div[1]/div[3]/div/div/div/div[2]/div/div[10]/div[1]/i[2]" />
+			        <element name="thumbnail-icon-download"           	      type="xpath"       value="//div[1]/div[3]/div/div/div/div[2]/div/div[7]/div[1]/i[3]" />
+			        <element name="thumbnail-icon-remove"                     type="xpath"       value="//div[1]/div[3]/div/div/div/div[2]/div/div[8]/div[1]/i[4]" />
+			    </thumbnail>
+
+			    </areas>
+		</page>
+
+		 <page name="screenshots2" defaultView="list-view" description="list-view页面 ">
+				<view name="list-view" areas="[common-screenshots,list]"/>
+			<areas>
+				<common-screenshots description="上边部分按钮">
+					<element name="button-download"           		type="xpath"       value="//div[1]/div[3]/div/div/div/div[1]/div[1]/button[1]" />
+			        <element name="select_all"     			        type="xpath"       value="//div[1]/div[3]/div/div/div/div[1]/div[1]/button[2]/span/span" />
+			        <element name="button-remove"      			    type="xpath"       value="//div[1]/div[3]/div/div/div/div[1]/div[1]/button[3]/span/span" />
+
+			        <element name="search_DeviceName"        		type="xpath"       value="//div[1]/div[3]/div/div/div/div[1]/input" />
+			        <element name="showing"        			        type="xpath"       value="//div[1]/div[3]/div/div/div/div[1]/span[2]" />
+			        <element name="thumbnail-icon"           		type="xpath"       value="//div[1]/div[3]/div/div/div/div[1]/div[2]/i[1]" />
+			        <element name="list-icon"          	            type="xpath"       value="//div[1]/div[3]/div/div/div/div[1]/div[2]/i[2]" />
+			    </common-screenshots>
+
+			    <list description="list部分">
+			        <element name="pic-checkbox"                       type="xpath"       value="//div[1]/div[3]/div/div/div/div[2]/table/tbody/tr[2]/td[1]/input" />
+			        <element name="list-icon-detail"                  type="xpath"       value="//div[1]/div[3]/div/div/div/div[2]/table/tbody/tr[1]/td[5]/span[1]/i" />
+			        <element name="list-icon-download"                type="xpath"       value="//div[1]/div[3]/div/div/div/div[2]/table/tbody/tr[5]/td[5]/span[2]/i" />
+			        <element name="list-icon-remove"                  type="xpath"       value="//div[1]/div[3]/div/div/div/div[2]/table/tbody/tr[5]/td[5]/span[3]/i" />
+		            <element name="button-first"      			     type="xpath"       value="//div[1]/div[3]/div/div/div/div[3]/ul/li[1]/a" />
+			        <element name="button-previous"      			 type="xpath"       value="//body/div[1]/div[3]/div/div/div/div[3]/ul/li[2]/a" />
+			        <element name="button-1"      			          type="xpath"       value="//body/div[1]/div[3]/div/div/div/div[3]/ul/li[3]/a" />
+			       	<element name="button-2"                           type="xpath"       value="//div[1]/div[3]/div/div/div/div[3]/ul/li[4]/a" />
+			    	<element name="button-next"    	                 type="xpath"       value="///html/body/div[1]/div[3]/div/div/div/div[3]/ul/li[5]/a" />
+			    	<element name="button-last"           		     type="xpath"       value="//div[1]/div[3]/div/div/div/div[3]/ul/li[6]/a" />
+			        <element name="sortbutton-createtime"            type="xpath"       value="//div[1]/div[3]/div/div/div/div[2]/table/thead/tr/th[4]/div" />
+			        <!-- 分页下拉菜单里的选项没有 -->
+			        <element name="pagesize-dropdown"                type="xpath"       value="//div[1]/div[3]/div/div/div/div[3]/span[1]/select" />
+			    </list>
+
+			    </areas>
+		</page>
+
+	 	</pages>
+	</UiMap>
+</test-data>

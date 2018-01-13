@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suite1">
+	
+	
+		<!-- 跑group "selenium"  -->
+    <test name="groups" preserve-order="true">
+    	<!-- 要跑的gorup名称 -->
+        <groups>
+            <run>
+                <include name="NoDelete" />
+            </run>
+        </groups>
+
+        <!-- 具体跑那些class(这个class里包含要跑的group。 这个必须有) -->
+        <classes>
+            <class name="com.by.automate.testCases.devicepass.user.workspaces.apps.test.Test_Phone_Messagebox" />
+
+        </classes>
+    </test>
+  
+  
+
+	
+
+</suite>

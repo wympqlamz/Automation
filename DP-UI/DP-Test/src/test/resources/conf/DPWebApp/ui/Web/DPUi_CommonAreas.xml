@@ -1,0 +1,56 @@
+<pages>
+	<commonAreas>
+        <common description="devicepass 固定元素" >
+		<!--<head description="头部">-->
+			<element name="jiantou"        type="xpath"       value="//a[contains(@ng-click,'toggleAside')]/i" />
+			<element name="language"       type="xpath"       value="//span[@ng-show='showSelectLanguage']//span/span" />
+			<element name="testStatus"     type="xpath"       value="//a[contains(@class,'btn-running-test')]/span/span" />
+		    <element name="messageCenter"  type="xpath"       value="//i[@class='icon iconfont icon-message']/.." />
+		    <element name="help"           type="xpath"       value="//span[contains(@ng-click,'resetUserCurrentTour')]" />
+			<element name="userName"       type="xpath"       value="(//div[@class='navbar-collapse collapse']//span)[1]" />
+					<!-- Logout -->
+					<element name="Logout"       type="xpath"       value="//div[@class='navbar-collapse collapse']/descendant::span[text()='Logout']" />
+					
+		<!--</head>-->
+
+		<!--<leftOption description="左边选项">-->
+		    <element name="logo"           type="xpath"       value="//a[contains(@class,'app-logo')]" />
+		    <element name="workspace"      type="xpath"       value="//a[contains(@ng-click,'workspace')]" />
+		    <element name="apps"           type="xpath"       value="(//ul[contains(@ng-class,'workspace')]/li//span)[1]" view="apps:apps" />
+		    <element name="testReport"     type="xpath"       value="(//ul[contains(@ng-class,'workspace')]/li//span)[2]" />
+		    <element name="screenShots"    type="xpath"       value="(//ul[contains(@ng-class,'workspace')]/li//span)[3]" />
+
+		    <element name="devicesOption"  type="xpath"       value="//a[contains(@ng-click,'devices')]" />
+		    <element name="lastUse"        type="xpath"       value="(//ul[contains(@ng-class,'devices')]/li//span)[1]" />
+		    <element name="devices"        type="xpath"       value="(//ul[contains(@ng-class,'devices')]/li//span)[3]" view="alldevices:alldevices" />
+		    <element name="groups"         type="xpath"       value="(//ul[contains(@ng-class,'devices')]/li//span)[4]" view="groups:groups" />
+
+			<element name="management"     type="xpath"       value="//a[contains(@ng-click,'management')]" />
+		    <element name="companies"      type="xpath"       value="(//ul[contains(@ng-class,'management')]/li//span)[1]" view="companies:companies" />
+		    <element name="teams"          type="xpath"       value="(//ul[contains(@ng-class,'management')]/li//span)[2]" view="teams:selectCompany" />
+		    <element name="users"          type="xpath"       value="(//ul[contains(@ng-class,'management')]/li//span)[3]" view="users:selectCompanyIntoUsersPage" />
+		    <element name="configuration"  type="xpath"       value="(//ul[contains(@ng-class,'management')]/li//span)[4]" />
+		    <element name="rate"            type="xpath"       value="//ul[contains(@class,'menu-list-ul')]/li[5]/a/span" />
+
+		    <element name="build"          type="xpath"       value="(//p)[1]" />
+		    <element name="copyRight"      type="xpath"       value="(//p)[2]" />
+		    <element name="byBeyondsoft"   type="xpath"       value="(//p)[3]" />
+		<!--</leftOption>-->
+        </common>
+        <login description="登录">
+            <element name="logo"           type="xpath"       value="//a[contains(@class,'app-logo')]" />
+            <element name="accountLabel"   type= "xpath"      value="(//label)[1]" />
+            <element name="passwordLabel"  type= "xpath"      value="(//label)[2]" />
+            <element name="email"          type="xpath"       value="//input[@name='email']" />
+            <element name="password"       type="xpath"       value="//input[@name='password']" />
+            <element name="loginButton"    type="xpath"       value="(//input)[3]"  />
+            <element name="forgottenPwd"   type="xpath"       value="//*[@class='forget-pas']/a" />
+            <element name="build"          type="xpath"       value="(//p)[1]" />
+            <element name="copyRight"      type="xpath"       value="(//p)[2]" />
+            <element name="bySoft"         type="xpath"       value="(//p)[3]" />
+
+
+        </login>
+	</commonAreas>
+
+</pages>

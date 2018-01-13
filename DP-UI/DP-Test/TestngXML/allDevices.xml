@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+
+<!-- <suite guice-stage="DEVELOPMENT" name="Default suite"> -->
+<!-- 	<listeners> -->
+<!--         <listener class-name="com.by.automate.tools.testng.LastListenersTestng" /> -->
+<!--     </listeners>  -->
+<!--   <test verbose="2" name="DP BAT Test"> -->
+<!--     <packages> -->
+<!--         <package name="com.by.automate.testCases.devicepass.user.workspaces.apps.*" /> -->
+<!--     </packages> -->
+<!--   </test> Default test -->
+<!-- </suite> -->
+
+<suite guice-stage="DEVELOPMENT" name="Default suite">
+<!-- 	<parameter name="url" value="https://10.23.0.34/auth/" />   -->
+<!-- 	<parameter name="username" value="zhaozhijian02@beyondsoft.com" />   -->
+<!-- 	<parameter name="password" value="123123" /> -->
+	
+	<parameter name="url" value="http://192.168.7.227/auth" />  
+	<parameter name="username" value="test02@bys.com" /> 
+	<parameter name="password" value="123123" />   
+
+<!-- 	<parameter name="url" value="https://alpha.devicepass.com/auth" />   -->
+<!-- 	<parameter name="username" value="admin103@beyondsoft.com" />  -->
+<!-- 	<parameter name="password" value="123123" />   -->
+	
+	<!--This common user is used for control and release device, then generate device operation records for Utilization check    -->
+	<!--<parameter name="username1" value="test01dddd@bys.com" />  -->
+	<parameter name="username1" value="zhaozhijian02@beyondsoft.com" /> 
+	<parameter name="password1" value="123456" /> 
+	
+	<test verbose="2" name="DP allDevices Test" preserve-order="true">
+		<groups>
+			
+			<define name="Group1" />
+			<define name="Group2" />
+			<define name="Group3" />
+			<define name="Group4" />
+			
+			<define name="AndroidSingleControl">
+				<include name="Group1"/>
+			</define>
+			
+			<define name="Utilization">
+				<include name="Group2"/>
+			</define>
+			
+			<define name="Rate">
+				<include name="Group4"/>
+			</define>
+		
+			<run>
+			<!--<include name="AndroidSingleControl" /> -->
+			<include name="Utilization" />
+			<!--<include name="Rate" />-->
+			</run>
+		</groups>
+    	<packages>
+        	<!--<package name="com.by.automate.testCases.devicepass.user.devices.allDevices.*" />-->
+			<!--<package name="com.by.automate.testCases.devicepass.user.devices.utilization.*" /> -->
+        	 <package name="com.by.automate.testCases.devicepass.user.devices.rate.*" /> 
+    	</packages>
+    	
+	</test>
+</suite>
+
+

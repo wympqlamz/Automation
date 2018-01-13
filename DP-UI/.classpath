@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="com/by/automate/tools/" kind="src" path="DP-Test/src/main/java"/>
+	<classpathentry kind="src" path="DP-Test/src/main/java/com/by/automate/tools"/>
+	<classpathentry kind="src" path="DP-Test/src/test/java"/>
+	<classpathentry kind="lib" path="DP-Test/custom_report/Report/TestReportFactory.jar"/>
+	<classpathentry kind="lib" path="DP-Test/custom_report/SendEmail/SendEmail.jar"/>
+	<classpathentry kind="lib" path="DP-Test/src/test/resources/data/App/android_apk/UiAutomatorScript/Uiautomator-Test.jar"/>
+	<classpathentry kind="lib" path="DP-Test/src/test/resources/lib/AXMLPrinter.jar"/>
+	<classpathentry kind="lib" path="DP-Test/src/test/resources/lib/InstrumentDriver-1.4.3.jar"/>
+	<classpathentry kind="lib" path="DP-Test/src/test/resources/lib/InstrumentDriverByJustin_Test-1.3.8.jar"/>
+	<classpathentry kind="lib" path="DP-Test/src/test/resources/lib/InstrumentDriverByJustin_Test-1.4.2.jar"/>
+	<classpathentry kind="lib" path="DP-Test/src/test/resources/lib/InstrumentDriverByJustin-1.1.jar"/>
+	<classpathentry kind="lib" path="DP-Test/src/test/resources/lib/InstrumentDriverByJustin.jar"/>
+	<classpathentry kind="lib" path="DP-Test/src/test/resources/lib/InstrumentDriverByJustinTestVersion-1.3.5.jar"/>
+	<classpathentry kind="lib" path="DP-Test/src/test/resources/lib/opencv-320.jar"/>
+	<classpathentry kind="lib" path="DP-Test/src/test/resources/lib/saxon-8.7.jar"/>
+	<classpathentry kind="lib" path="DP-Test/src/test/resources/lib/uiautomator.jar"/>
+	<classpathentry kind="lib" path="DP-Test/src/test/resources/lib/zip.jar"/>
+	<classpathentry kind="lib" path="DP-Test/target/test-classes/data/App/android_apk/UiAutomatorScript/Uiautomator-Test.jar"/>
+	<classpathentry kind="lib" path="DP-Test/target/test-classes/lib/AXMLPrinter.jar"/>
+	<classpathentry kind="lib" path="DP-Test/target/test-classes/lib/InstrumentDriver-1.4.3.jar"/>
+	<classpathentry kind="lib" path="DP-Test/target/test-classes/lib/InstrumentDriverByJustin_Test-1.3.8.jar"/>
+	<classpathentry kind="lib" path="DP-Test/target/test-classes/lib/InstrumentDriverByJustin_Test-1.4.2.jar"/>
+	<classpathentry kind="lib" path="DP-Test/target/test-classes/lib/InstrumentDriverByJustin-1.1.jar"/>
+	<classpathentry kind="lib" path="DP-Test/target/test-classes/lib/InstrumentDriverByJustin.jar"/>
+	<classpathentry kind="lib" path="DP-Test/target/test-classes/lib/InstrumentDriverByJustinTestVersion-1.3.5.jar"/>
+	<classpathentry kind="lib" path="DP-Test/target/test-classes/lib/opencv-320.jar"/>
+	<classpathentry kind="lib" path="DP-Test/target/test-classes/lib/saxon-8.7.jar"/>
+	<classpathentry kind="lib" path="DP-Test/target/test-classes/lib/uiautomator.jar"/>
+	<classpathentry kind="lib" path="DP-Test/target/test-classes/lib/zip.jar"/>
+	<classpathentry kind="output" path="DP-Test/target/classes"/>
+</classpath>

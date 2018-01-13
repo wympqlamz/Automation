@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suite1">
+	
+    <test name="NoDelete_Android" preserve-order="true">
+        <groups>
+            <run>
+				<!-- login -->
+					<include name="Login_NoDelete" />
+				
+				
+			
+				<!-- groups-->
+					<include name="openGroups" />
+					<include name="Groups_AddNewGroup" />
+					<include name="Groups_editGroup" />
+					<include name="Groups_SelectDevices" />
+					<include name="Groups_UnselectDevices" />
+
+				
+				
+				<!-- after test -->
+					<include name="currentUse_releaseAll" />
+					<include name="tearDown" />
+				
+            </run>
+        </groups>
+
+        <classes>
+            <class name="com.by.automate.testCases.devicepass.user.workspaces.apps.test.Test_FC_test" />
+
+        </classes>
+    </test>
+  
+  
+
+	
+
+</suite>

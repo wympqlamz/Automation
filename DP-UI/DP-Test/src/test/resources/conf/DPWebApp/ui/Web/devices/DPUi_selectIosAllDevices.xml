@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-data>
+
+		<UiMap>
+		    <application>
+				<DefaultPage>alldevices</DefaultPage>
+				<AppName>Devicepass</AppName>
+				<Version>0.9.45</Version>
+				<Environment>QA</Environment>
+				<TestCategory>Web</TestCategory>
+				<NetWork>Local Connection</NetWork>
+				<Description>保存Devicepass所有页面的元素定位</Description>
+			</application>
+			<pages>
+
+
+
+				<page name="alldevices" defaultView="alldevices" description = "登陆进来默认选择All Devices" >
+				 		<view name="alldevices" 		areas="[common,login,deviceCenter,releaseDeviceMsg]" />
+				 		<view name="control" 			areas="[controlDialog,controlPage,setDedinition,menuScreenshot,menuAppsPage,menuInstalledApps,menuInfo,setExtraInfo,showScreenSet,confirmUninstallApp]" />
+					    <view name="releasePage" 		areas="[releaseDevicePage]" />
+					    <view name="threePoint" 		areas="[clickThreePoint]" />
+
+				 		<areas>
+				 			<deviceCenter description="device center">
+								<element name="controlButton"  				type="xpath"       	value="//button[contains(@ng-click,'control')]/span"  view="alldevices:control" />
+								<element name="bookButton"  				    type="xpath"       	value="//button[contains(@ng-click,'book')]/span"  />
+							    <element name="groupButton"    				type="xpath"       	value="//button[contains(@ng-click,'addToDeviceGroup')]/span"  />
+							    <element name="releaseButton"     			type="xpath"       	value="//button[contains(@ng-click,'releaseSelectedDevice')]/span" />
+								<element name="allDevices"  				    type="xpath"  	   	    value="//div[@class='device-photo-small']/img" />
+								<element name="allDevicesStatus"  			type="xpath"  		    value="//span[contains(@class,'btn-xs device-status')]" />
+								<element name="devicesNames"  				type="xpath"  		    value="//div[contains(@class,'device-name')]" />
+								<element name="devicesNamesByFirefox"  		type="xpath"  		    value="//ul[contains(@class,'devices-icon-view unselectable')]" />
+								<element name="moreFilters"     			    type="xpath"       	value="//span[@class='dropdown'][last()]/a" />
+
+							</deviceCenter>
+
+					  		<controlDialog description="控制设备 确认页面 " >
+						  		<element name="modalTitle"  		     type="xpath" 		value="//h4[contains(@class,'modal-title')]" />
+						  		<element name="textInfo"  	         type="xpath" 		value="//div[contains(@class,'alert-info')]/div/span" />
+								<element name="inputControlTime"      type="xpath"     value="//input[@ng-model='controlTime']" />
+								<element name="cancelControlBtn"  	 type="xpath" 		value="(//button[contains(@ng-click,'cancel')])[2]" />
+								<element name="confirmControlBtn"  	 type="xpath" 		value="//button[contains(@class,'confirm-control')]/span" />
+
+					  		</controlDialog>
+
+							<controlPage description="控制设备成功 进入到控屏界面">
+								<element name="screenshotBtn"  		  type="xpath" 		value="//button[contains(@ng-click,'sendOperateAction')]/span" />
+								<element name="reloadAllBtn"  	      type="xpath" 		value="//button[contains(@ng-click,'reloadAll')]/span" />
+								<element name="releaseAllBtn"          type="xpath"        value="//button[contains(@ng-click,'releaseAll')]/span" view="alldevices:releasePage"/>
+								<element name="renewDevicesBtn"  	  type="xpath" 		value="//button[contains(@ng-click,'renewDevices')]/span" />
+								<element name="controlSucces"  		  type="xpath" 		value="//div[@ng-bind-html='message.text']" />
+								<element name="controlSucces1"  		  type="xpath" 		value="(//div[@ng-bind-html='message.text'])[1]" />
+								<element name="controlSucces2"  		  type="xpath" 		value="(//div[@ng-bind-html='message.text'])[2]" />
+								<element name="iosDeviceName"  	      type="xpath" 		value="//span[contains(@ng-click,'deviceInfo')]" />
+								<element name="iosDeviceName1"  	      type="xpath" 		value="(//div[@class='as-table fill-height device-control']//span[contains(@ng-click,'deviceInfo')])[1]" />
+								<element name="iosDeviceName2"  	      type="xpath" 		value="(//div[@class='as-table fill-height device-control']//span[contains(@ng-click,'deviceInfo')])[2]" />
+								<element name="timeLeft"               type="xpath"         value="//div[@title='Time Left']" />
+								<element name="threePoint"             type="xpath"         value="(//button[@tooltip-placement='top'])[1]/i"  view="alldevices:threePoint" />
+								<element name="changeDefinition"  	  type="xpath" 		value="((//span[contains(@class,'unselectable select-dropdown')])[1]/a/span)[1]" />
+								<element name="extrainfoBtn"  	      type="xpath" 		value="((//span[contains(@class,'unselectable select-dropdown')])[2]/a/span)[1]" />
+								<element name="showScreenBtn"          type="xpath"         value="((//span[contains(@class,'unselectable select-dropdown')])[3]/a/span)[1]" />
+								<element name="synconBtn"               type="xpath"         value="//span[contains(@ng-click,'toggleSyncon')]/span/span" />
+
+								<element name="operateHandle"  	      type="xpath" 		value="//div[contains(@class,'device-operate-pnl-handle')]/i" />
+								<element name="menuScreenshot"  	      type="xpath" 		value="//div[contains(@class,'operate-action-screenshot')]/i" />
+								<element name="menuApps"  	          type="xpath" 		value="//div[contains(@class,'operate-action-apps')]" />
+								<element name="menuInstalledApps"  	  type="xpath" 		value="//div[contains(@class,'operate-action-ios-installed-app-list')]" />
+								<element name="menuInfo"  	          type="xpath" 		value="//div[contains(@class,'operate-action-info')]" />
+
+							</controlPage>
+
+							<setDedinition description="改变设备的分辨率">
+								<element name="setUD"  	      type="xpath" 		value="(//a[contains(@ng-click,'setDefinition')])[2]/span" />
+								<element name="setHD"  	      type="xpath" 		value="(//a[contains(@ng-click,'setDefinition')])[3]/span"  />
+								<element name="setSD"  	      type="xpath" 		value="(//a[contains(@ng-click,'setDefinition')])[4]/span" />
+								<element name="setLD"  	      type="xpath" 		value="(//a[contains(@ng-click,'setDefinition')])[5]/span" />
+
+							</setDedinition>
+
+							<setExtraInfo description="添加Extra Info">
+								<element name="allExtraInfo"  	      type="xpath" 		value="//li[contains(@ng-repeat,'extendColumns ')]//label" />
+								<element name="allExtraCheckbox"  	  type="xpath" 		value="//li[contains(@ng-repeat,'extendColumns ')]//label/input" />
+
+							</setExtraInfo>
+
+							<menuScreenshot description="进入右侧Screenshot菜单界面">
+								<element name="tekaScreenBtn"          type="xpath"          value="//button[contains(@ng-click,'clickTakeScreenShot')]/span" />
+								<element name="downloadBtn"            type="xpath"          value="//button[@uib-tooltip='Download selected screenshots']/span" />
+								<element name="moreImagesBtn"          type="xpath"          value="//button[@uib-tooltip='Load more']/span" />
+								<element name="selectAllBtn"           type="xpath"          value="//button[contains(@ng-click,'toggleSelectAll')]" />
+								<element name="screenshotdata"         type="xpath"          value="(//span[contains(@ng-if,'deviceScreenshots')])[1]" />
+								<element name="screenshotImg"          type="xpath"          value="//img[@class='img-btn-screen']" />
+
+							</menuScreenshot>
+
+
+							<menuAppsPage description="进入右侧Apps菜单界面">
+								<element name="uploadIosApp"  	      type="xpath" 		value="//button[contains(@class,'btn-app-upload')]/span" />
+								<element name="removeIosApp"  	      type="xpath" 		value="//button[contains(@ng-click,'batchRemoveVersions')]/span" />
+                                <element name="appNameList"  	      type="xpath" 		value="//div[@ng-repeat='row in apps']/div[@class='app-name']/div[1]" />
+								<element name="installIosApp"  	      type="xpath" 		value="((//div[contains(@ng-if,'installingApp')])[1]/span)[1]/i" />
+								<element name="installingIosApp"  	  type="xpath" 		value="((//div[contains(@ng-if,'installingApp')])[1]/span)[1]" />
+
+							</menuAppsPage>
+
+							<menuInstalledApps description="进入右侧InstalledApps菜单界面">
+								<element name="reloadInstalledApps"  type="xpath"         value="//button[contains(@ng-click,'loadAppList')]/span" />
+								<element name="allInstalledAppList"  type="xpath"         value="(//table)[1]/tbody/tr" />
+							</menuInstalledApps>
+
+							<menuInfo description="进入右侧Info菜单界面">
+								<element name="physicalDeviceInfo"  type="xpath"          value="((//table[@class='stf-info-table']//tr)[1]//span)[1]" />
+								<element name="cpuInfo"              type="xpath"          value="((//table[@class='stf-info-table']//tr)[1]//span)[2]" />
+								<element name="memoryInfo"           type="xpath"          value="((//table[@class='stf-info-table']//tr)[1]//span)[3]" />
+
+							</menuInfo>
+
+							<releaseDevicePage description="release All Devices">
+								<element name="titleIcon"           type="xpath"          value="//h4[contains(@class,'modal-title')]/i" />
+								<element name="confirmTitle"        type="xpath"          value="//h4[contains(@class,'modal-title')]/span" />
+								<element name="closeBtn"            type="xpath"          value="//h4[contains(@class,'modal-title')]/button" />
+								<element name="checkbox"            type="xpath"          value="//input[@ng-model='status.clean']" />
+								<element name="cancelBtn"           type="xpath"          value="//button[contains(@ng-click,'cancel')]/span" />
+								<element name="confirmBtn"          type="xpath"          value="//button[contains(@ng-click,'ok')]/span"  view="alldevices:alldevices"/>
+							</releaseDevicePage>
+
+							<releaseDeviceMsg description="release All Devices message">
+								<element name="releaseDevicesSuccessMsg"           type="xpath"          value="//div[@ng-bind-html='message.text']" />
+							</releaseDeviceMsg>
+
+							<showScreenSet description="show Screen 控制设备的数量">
+								<element name="allUsingphone"           type="xpath"          value="//li[contains(@ng-repeat,'inUseDevices')]//label" />
+								<element name="allUsingphoneCheckbox"  type="xpath"          value="//li[contains(@ng-repeat,'inUseDevices')]//label/i" />
+								<element name="firstUsingphoneCheckbox" type="xpath"          value="(//li[contains(@ng-repeat,'inUseDevices')]//label/i)[1]" />
+							</showScreenSet>
+
+							<clickThreePoint description="Click Three Point into full screen">
+								<element name="fullScreenBtn"            type="xpath"          value="//button[contains(@ng-click,'fullScreen')]/i" />
+								<element name="udInFullscreen"           type="xpath"          value="(//ul[contains(@class,'full-portrait')]/li)[2]" />
+								<element name="hdInFullscreen"           type="xpath"          value="(//ul[contains(@class,'full-portrait')]/li)[3]" />
+								<element name="sdInFullscreen"           type="xpath"          value="(//ul[contains(@class,'full-portrait')]/li)[4]" />
+								<element name="ldInFullscreen"           type="xpath"          value="(//ul[contains(@class,'full-portrait')]/li)[5]" />
+								<element name="homeInFullscreen"         type="xpath"          value="(//ul[contains(@class,'full-portrait')]/li)[6]" />
+								<element name="rotateLeftInFullscreen"  type="xpath"          value="(//ul[contains(@class,'full-portrait')]/li)[7]" />
+								<element name="rotateRightInFullscreen" type="xpath"          value="(//ul[contains(@class,'full-portrait')]/li)[8]" />
+								<element name="screenshotInFullscreen"  type="xpath"          value="(//ul[contains(@class,'full-portrait')]/li)[9]" />
+								<element name="closeFullScreen"          type="xpath"          value="//button[contains(@ng-click,'closeFullScreen')]/i" />
+
+							</clickThreePoint>
+
+							<confirmUninstallApp description="卸载APP的弹框">
+								<element name="confirmTitle"                  type="xpath"      	value="//h4[contains(@class,'modal-title')]/span" />
+								<element name="uninstallAppMessage"          type="xpath"      	value="//div[@class='modal-body']/h4" />
+								<element name="cancelUninstallApp"           type="xpath"      	value="//button[contains(@ng-click,'cancel')]/span" />
+								<element name="confirmUninstallApp"          type="xpath"      	value="//button[contains(@ng-click,'ok')]/span" />
+								<element name="successUninstallAppMessage"  type="xpath"      	value="//div[@ng-bind-html='message.text']" />
+
+
+							</confirmUninstallApp>
+
+						</areas>
+				 </page>
+
+
+		 	</pages>
+	</UiMap>
+</test-data>

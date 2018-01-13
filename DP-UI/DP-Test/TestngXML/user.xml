@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Default suite">
+	<listeners>
+        <listener class-name="com.by.automate.tools.testng.LastListenersTestng" />
+    </listeners> 
+  <test verbose="2" name="DP BAT Test">
+    <packages>
+        <package name="com.by.automate.testCases.devicepass.user.workspaces.apps.*" />
+    </packages>
+  </test> <!-- Default test -->
+</suite>

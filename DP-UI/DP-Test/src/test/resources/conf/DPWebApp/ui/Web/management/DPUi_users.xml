@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-data>
+
+	<UiMap>
+	    <application>
+			<DefaultPage>users</DefaultPage>
+			<AppName>Devicepass</AppName>
+			<Version>0.9.45</Version>
+			<Environment>QA</Environment>
+			<TestCategory>Web</TestCategory>
+			<NetWork>Local Connection</NetWork>
+			<Description>保存Devicepass所有页面的元素定位</Description>
+		</application>
+		<pages>
+
+
+			<page name="users" defaultView="selectCompanyIntoUsersPage" description="登录进来选择company进入user界面" >
+				<view name="selectCompanyIntoUsersPage" areas="[common,login,selectCompany]" />
+				<view name="usersPage" areas="[common,login,users]" />
+
+				<areas>
+					<selectCompany description="选择company进入user界面">
+						<element name="selectCompanyTitle"       	type="xpath"      	value="//div[@class='form-group']/h3/span" />
+						<element name="selectCompanyTextbox"     	type="xpath"      	value="//select[contains(@ng-change,'changeCompany')]" />
+						<element name="firstBySelcetCompany"     	type="xpath"      	value="//select[contains(@ng-change,'changeCompany')]/option[1]" />
+						<element name="allCompanyByMenu"         	type="xpath"      	value="//select[contains(@ng-change,'changeCompany')]/option" />
+
+					</selectCompany>
+
+					<users description="users page">
+					
+						<!-- Public item, Current user account Email address -->
+						<element name="currentuserEmailaddress"              type="xpath"      	value="//div[@class='col-sm-12']/descendant::p[@ng-bind='user.email']" />
+					
+						<!-- Get user_name -->
+						<element name="seekusername"                type="xpath"      	value="//div[@ng-if='users.length']/descendant::tr/td[2]/span" />
+						<!-- Get user_email -->
+						<element name="seekuseremail"               type="xpath"      	value="//div[@ng-if='users.length']/descendant::tr/td[3]" />
+							<!-- Get user_email list -->
+							<element name="seekuseremaillist"               type="xpath"      	value="//div[@ng-if='users.length']/descendant::tr/td[contains(text(),'.com')]" />
+						
+						<!-- Get user_company -->
+						<element name="seekusercompany"             type="xpath"      	value="//div[@ng-if='users.length']/descendant::tr/td[4]" />
+					
+						<!-- Get user_team against Not Assign -->
+						<element name="seekuserteam1"                type="xpath"      	value="//div[@ng-if='users.length']/descendant::tr/td[5]" />
+					
+						<!-- Get user_team with Not Assign -->
+						<element name="seekuserteam2"                type="xpath"      	value="//div[@ng-if='users.length']/descendant::tr/td[5]/span" />
+					
+					
+						<!-- Get user_phone -->
+						<element name="seekuserphone"               type="xpath"      	value="//div[@ng-if='users.length']/descendant::tr/td[6]" />
+					
+						<!-- Get user_create date -->
+						<element name="seekuserdate"              	type="xpath"      	value="//div[@ng-if='users.length']/descendant::tr/td[7]" />
+					
+						<!-- Get user_Auth Type -->
+						<element name="seekuserauthtype"            type="xpath"      	value="//div[@ng-if='users.length']/descendant::tr/td[8]" />
+						
+						<!-- Get user_Status -->
+						<element name="seekuserstatus"              type="xpath"      	value="//div[@ng-if='users.length']/descendant::tr/td[9]/span" />
+					
+						<!-- Get user_Balance -->
+						<element name="seekuserbalance"             type="xpath"      	value="//div[@ng-if='users.length']/descendant::tr/td[10]/span" />
+						
+						<!-- Get user_Remaining hours -->
+						<element name="seekuserremaininghours"      type="xpath"      	value="//div[@ng-if='users.length']/descendant::tr/td[11]/span" />
+					
+					
+						<element name="usersInCompanyTitle"      	type="xpath"      	value="(//div[contains(@class,'select-dropdown')]/a/span)[1]" />
+						<element name="usersInCompanyName"       	type="xpath"      	value="(//div[contains(@class,'select-dropdown')]/a/span)[2]" />
+						<element name="selectCompanyDropdownBtn" 	type="xpath"      	value="(//div[contains(@class,'select-dropdown')]/a/span)[3]" />
+						<element name="allCompanyOfBtn"          	type="xpath"      value="(//div[contains(@class,'select-dropdown')]/ul[@class='dropdown-menu'])[1]/li//span" />
+						<element name="addNewUserBtn"            	type="xpath"      	value="//button[contains(@ng-click,'addUser')]/span" />
+						<element name="assignUserBtn"            	type="xpath"      	value="//button[@uib-tooltip='Assign']/span" />
+						<element name="moreBtn"                      type="xpath"      	value="(//div[contains(@class,'select-dropdown')]/a)[2]/span[1]" />
+						<element name="moreDropdownBtn"             type="xpath"      	value="(//div[contains(@class,'select-dropdown')]/a)[2]/span[2]" />
+						<element name="allStatus"                    type="xpath"      	value="((//span[@class='select-dropdown dropdown'])[1]//span)[1]" />
+						<element name="allAuthType"                  type="xpath"      	value="((//span[@class='select-dropdown dropdown'])[2]//span)[1]" />
+						<element name="allRoles"                     type="xpath"      	value="((//span[@class='select-dropdown dropdown'])[3]//span)[1]" />
+						<element name="allTeams"                     type="xpath"      	value="//span[@class='select-dropdown ng-scope dropdown']/a/span[1]" />
+						<element name="searchCheckbox"              type="xpath"      	value="//input[@ng-model='params.searchText']" />
+
+						<element name="usersList"                 	type="xpath"      	value="//div[@ng-if='users.length']//tbody//tr" />
+					</users>
+				</areas>
+
+			</page>>
+		</pages>
+	</UiMap>
+</test-data>

@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-data>
+
+	<UiMap>
+	    <application>
+			<DefaultPage>alldevices</DefaultPage>
+			<AppName>Devicepass</AppName>
+			<Version>0.9.45</Version>
+			<Environment>QA</Environment>
+			<TestCategory>Web</TestCategory>
+			<NetWork>Local Connection</NetWork>
+			<Description>保存Devicepass所有页面的元素定位</Description>
+		</application>
+		<pages>
+            <page name="currentUse" defaultView="groupview" description = "Current Use页面元素">
+            <!-- 本页面的弹出界面或确认框    -->
+            <view name="screenshotL" 		areas="[common,login,leftopt,currentusetop,screenL,screenshotL,renewDialog]" />
+            <view name="appsL" 			    areas="[common,login,leftopt,currentusetop,screenL,appsL]" />
+            <view name="advancedL" 			areas="[common,login,leftopt,currentusetop,screenL,advancedL]" />
+            <view name="fileexploreL" 		areas="[common,login,leftopt,currentusetop,screenL,fileexploreL]" />
+            <view name="infoL" 			    areas="[common,login,leftopt,currentusetop,screenL,infoL]" />
+            <view name="logsL" 			    areas="[common,login,leftopt,currentusetop,screenL,logsL]" />
+            <view name="renewDialog" 		areas="[renewDialog]" />
+			
+			
+            <areas>
+                <leftopt>
+                    <!--<leftOption description="左边选项">-->
+                    <element name="RecentUsedMenu"      type="xpath"       value="//span[text()='Recently Used']"       view="recentUsed:defaultview"/>
+                    <element name="groups"              type="xpath"       value="//span[text()='Groups']"              view="groups:defaultview"/>
+                    <element name="devices"             type="xpath"       value="//span[text()='All Devices']"         view="alldevices:groupview" />
+                    <element name="rateMenu"            type="xpath"       value="//span[text()='Rate']"                view="rate:pricingsettings" />
+					<element name="All Devices"             type="xpath"       value="//a[child::span[contains(text(),'All Devices')]]"     view="alldevices:groupview" />
+               
+                </leftopt>
+                <!-- Current Use公用部分 界面顶部 -->
+                <currentusetop description="Current Use页面顶部公用部分元素">
+                    <!-- Current Use公用部分 顶部按钮 -->
+                    <element name="ScreenShottopBtn"  		type="xpath"       	value="//button[@class='btn btn-sm btn-primary btn-screen-shot']"/>
+                    <element name="ReloadAll"  		    type="xpath"       	value="//button[@class='btn btn-sm btn-primary btn-reload-all']"/>
+                    <element name="ReleaseAll"  		type="xpath"       	value="//div[@class='fill-height ng-scope']/descendant::button[3]"/>
+                    <element name="RenewDevices"  		type="xpath"       	value="//button[@class='btn btn-sm btn-primary btn-renew-devices']" />
+					
+					<!-- Current Use公用部分 顶部菜单弹出框 -->
+					<element name="ReleaseAllComfirmBtn"  		type="xpath"       	value="//*[@class='modal-footer']/button[contains(@class,'btn-primary')]"/>
+					
+					<!-- Current Use公用部分 顶部菜单弹出框 -->
+
+                    <!-- Current Use公用部分 顶部菜单 -->
+                    <!-- User -->
+                    <element name="setDefinition"  		type="xpath"       	value="//div[contains(@class,'clear-fix')]/span[contains(@class,'unselectable ')]/a[contains(@class,'toggle')]/span[contains(@class,'binding')]"/>
+                    
+                    <!-- 点击setDefinition菜单后出现清晰度下拉选项 -->
+                        <element name="UD"  				type="xpath"       	value="//span[text()='Ultra Definition']"/>
+                        <element name="HD"  				type="xpath"       	value="//span[text()='High Definition']"/>
+                        <element name="SD"  				type="xpath"       	value="//span[text()='Standard Definition']"/>
+                        <element name="LD"  				type="xpath"       	value="//span[text()='Low Definition']"/>
+                    <element name="ExtraInfo"  			type="xpath"       	value="(//a[@class='ng-scope dropdown-toggle'])[2]//span"/>
+                    <!-- 点击ExtraInfo菜单后出现的选项 -->
+
+                        <element name="ScreenSizelable"  	type="xpath"       	value="(//label[contains(@class,'lable ng-binding')])[1]"/>
+                        <element name="ScreenSizecheckbox"  type="xpath"       	value="(//label[contains(@class,'lable ng-binding')])[1]/input"/>
+                        <element name="Versionlable"  		type="xpath"       	value="(//label[contains(@class,'lable ng-binding')])[2]"/>
+                        <element name="Versioncheckbox"  	type="xpath"       	value="(//label[contains(@class,'lable ng-binding')])[2]/input"/>
+
+                        <element name="Brandlable"  		type="xpath"       	value="(//label[contains(@class,'lable ng-binding')])[3]"/>
+                        <element name="Brandcheckbox"  		type="xpath"       	value="(//label[contains(@class,'lable ng-binding')])[3]/input"/>
+                        <element name="Platformlable"  		type="xpath"       	value="(//label[contains(@class,'lable ng-binding')])[4]"/>
+                        <element name="Platformcheckbox"  	type="xpath"       	value="(//label[contains(@class,'lable ng-binding')])[4]/input"/>
+                        <element name="IMEIlable"  			type="xpath"       	value="(//label[contains(@class,'lable ng-binding')])[5]"/>
+                        <element name="IMEIcheckbox"  		type="xpath"       	value="(//label[contains(@class,'lable ng-binding')])[5]/input"/>
+                        <element name="ICCIDlable"  		type="xpath"       	value="(//label[contains(@class,'lable ng-binding')])[6]"/>
+                        <element name="ICCIDcheckbox"  		type="xpath"       	value="(//label[contains(@class,'lable ng-binding')])[6]/input"/>
+                        <element name="Widthlable"  		type="xpath"       	value="(//label[contains(@class,'lable ng-binding')])[7]"/>
+                        <element name="Widthcheckbox"  		type="xpath"       	value="(//label[contains(@class,'lable ng-binding')])[7]/input"/>
+                        <element name="Heightlable"  		type="xpath"       	value="(//label[contains(@class,'lable ng-binding')])[8]"/>
+                        <element name="Heightcheckbox"  	type="xpath"       	value="(//label[contains(@class,'lable ng-binding')])[8]/input"/>
+
+                    <element name="ShowScreen"  			type="xpath"       	value="//span[@class='unselectable select-dropdown extend-columns in-use-device dropdown']"/>
+                    <!-- 点击Projection菜单后出现的选项 -->
+                        <element name="devicelable"  		type="xpath"       	value="//li[contains(@ng-repeat,'inUseDevices')]//label"/>
+                        <element name="devicecheckbox"  	type="xpath"       	value="//li[contains(@ng-repeat,'inUseDevices')]//label/i"/>
+
+
+                </currentusetop>
+
+                <screenL description="Current Use页面中设备屏幕部分元素">
+                    <!-- <element name="controldevicename"  			type="xpath"       	value="//div[@class='fill-height device-control fill-height ng-scope']//a/span"/>-->
+                   <element name="controldevicename"  			type="xpath"       	value="//div[@class='as-table fill-height device-control']//span[contains(@ng-click,'deviceInfo')]"/>
+
+                   <!-- Device model information界面 -->
+                    <element name="devicemodelinfo"  		    type="xpath"       	value="//h4[@class='modal-title']//span"/>
+                    <element name="devicemodel"  		    type="xpath"       	value="//div[@class='title-text']/span"/>
+
+                    <element name="modelinfoBtn"  		    type="xpath"       	value="(//div[@class='btn-group']/button)[1]/span"/>
+                    <element name="serialinfoBtn"  		    type="xpath"       	value="(//div[@class='btn-group']/button)[2]/span"/>
+                    <element name="providerBtn"  		    type="xpath"       	value="(//div[@class='btn-group']/button)[3]/span"/>
+                    <element name="closeBtn"  		    type="xpath"       	value="//button[@class='close']"/>
+
+
+                    <!-- Model Info的界面 -->
+                    <element name="ManufacturerLabel"  		type="xpath"       	value="((//table[@class='table-modal']//tr)[1]/td)[1]/span"/>
+                    <element name="Manufacturerinfo"  		type="xpath"       	value="((//table[@class='table-modal']//tr)[1]/td)[2]/span"/>
+                    <element name="ModelLabel"  		    type="xpath"       	value="((//table[@class='table-modal']//tr)[1]/td)[3]/span"/>
+                    <element name="Modelinfo"  		        type="xpath"       	value="((//table[@class='table-modal']//tr)[1]/td)[4]/span"/>
+
+                    <element name="ResolutionLabel"  		type="xpath"       	value="((//table[@class='table-modal']//tr)[2]/td)[1]/span"/>
+                    <element name="Resolutioninfo"  		type="xpath"       	value="((//table[@class='table-modal']//tr)[2]/td)[2]/span"/>
+                    <element name="SizeLabel"  		        type="xpath"       	value="((//table[@class='table-modal']//tr)[2]/td)[3]/span"/>
+                    <element name="Sizelinfo"  		        type="xpath"       	value="((//table[@class='table-modal']//tr)[2]/td)[4]/span"/>
+
+                    <element name="CPUBrandLabel"  		    type="xpath"       	value="((//table[@class='table-modal']//tr)[3]/td)[1]/span"/>
+                    <element name="CPUBrandinfo"  		    type="xpath"       	value="((//table[@class='table-modal']//tr)[3]/td)[2]/span"/>
+                    <element name="ReleasedLabel"  		    type="xpath"       	value="((//table[@class='table-modal']//tr)[3]/td)[3]/span"/>
+                    <element name="Releasedlinfo"  		    type="xpath"       	value="((//table[@class='table-modal']//tr)[3]/td)[4]/span"/>
+
+                    <element name="CPUCoresLabel"  		    type="xpath"       	value="((//table[@class='table-modal']//tr)[4]/td)[1]/span"/>
+                    <element name="CPUCoresinfo"  		    type="xpath"       	value="((//table[@class='table-modal']//tr)[4]/td)[2]/span"/>
+                    <element name="CarrierNameLabel"  		    type="xpath"       	value="((//table[@class='table-modal']//tr)[4]/td)[3]/span"/>
+                    <element name="CarrierNameinfo"  		    type="xpath"       	value="((//table[@class='table-modal']//tr)[4]/td)[4]/span"/>
+
+                    <element name="CPUFrequencyLabel"  		    type="xpath"       	value="((//table[@class='table-modal']//tr)[5]/td)[1]/span"/>
+                    <element name="CPUFrequencyinfo"  		    type="xpath"       	value="((//table[@class='table-modal']//tr)[5]/td)[2]/span"/>
+                    <element name="RAMLabel"  		    type="xpath"       	value="((//table[@class='table-modal']//tr)[5]/td)[3]/span"/>
+                    <element name="RAMinfo"  		    type="xpath"       	value="((//table[@class='table-modal']//tr)[5]/td)[4]/span"/>
+
+                    <element name="ROMLabel"  		    type="xpath"       	value="((//table[@class='table-modal']//tr)[6]/td)[1]/span"/>
+                    <element name="ROMinfo"  		    type="xpath"       	value="((//table[@class='table-modal']//tr)[6]/td)[2]/span"/>
+                    <element name="ABILabel"  		    type="xpath"       	value="((//table[@class='table-modal']//tr)[6]/td)[3]/span"/>
+                    <element name="ABIinfo"  		    type="xpath"       	value="((//table[@class='table-modal']//tr)[6]/td)[4]/span"/>
+
+                    <element name="ChineseNameLabel"  		    type="xpath"       	value="((//table[@class='table-modal']//tr)[7]/td)[1]/span"/>
+                    <element name="ChineseNameinfo"  		    type="xpath"       	value="((//table[@class='table-modal']//tr)[7]/td)[2]/span"/>
+                    <element name="EnglishNameLabel"  		    type="xpath"       	value="((//table[@class='table-modal']//tr)[7]/td)[3]/span"/>
+                    <element name="EnglishNameinfo"  		    type="xpath"       	value="((//table[@class='table-modal']//tr)[7]/td)[4]/span"/>
+
+                    <element name="OtherNameLabel"  		type="xpath"       	value="((//table[@class='table-modal']//tr)[8]/td)[1]/span"/>
+                    <element name="OtherNameinfo"  		    type="xpath"       	value="((//table[@class='table-modal']//tr)[8]/td)[2]/span"/>
+
+                    <element name="ListViewImg"  		    type="xpath"       	value="(//div[@class='img-upload-sma-div img-itest-div max-width-height'])[1]/img"/>
+                    <element name="ListViewLabel"  		    type="xpath"       	value="(div[@class='drop-area-text img-upload-text'])[1]/span"/>
+                    <element name="GroupViewImg"  		    type="xpath"       	value="(//div[@class='img-upload-sma-div img-itest-div'])[2]/img"/>
+                    <element name="GroupViewLabel"  		type="xpath"       	value="(//div[@class='drop-area-text img-upload-text'])[2]/span"/>
+                    <element name="DetailViewImg"  		    type="xpath"       	value="(//div[@class='img-upload-sma-div img-itest-div'])[3]/img"/>
+                    <element name="DetailViewLabel"  		type="xpath"       	value="(//div[@class='drop-area-text img-upload-text'])[3]/span"/>
+
+                    <!-- Serial Info的界面 -->
+                    <element name="SerialLabel"  		type="xpath"       	value="(//td[@class='wordTd'])[16]/span"/>
+               		<element name="Serialinfo"  		type="xpath"       	value="(//td[@class='span-td'])[16]/span"/>
+                    <element name="IMEILabel"  		    type="xpath"       	value="(//td[@class='wordTd'])[17]/span"/>
+                    <element name="SIMEIinfo"  		    type="xpath"       	value="(//td[@class='span-td'])[17]/span"/>
+                    <element name="SystemVersionLabel"  	type="xpath"       	value="(//td[@class='wordTd'])[18]/span"/>
+                    <element name="SystemVersioninfo"  		type="xpath"       	value="(//td[@class='span-td'])[18]/span"/>
+                    <element name="ProviderLabel"  		type="xpath"       	value="(//td[@class='wordTd'])[19]/span"/>
+                    <element name="Providerinfo"  		type="xpath"       	value="(//td[@class='span-td'])[19]/span"/>
+                    <element name="SDKLabel"  		    type="xpath"       	value="(//td[@class='wordTd'])[20]/span"/>
+                    <element name="SDKinfo"  		    type="xpath"       	value="(//td[@class='span-td'])[20]/span"/>
+                    <element name="PositionLabel"  		type="xpath"       	value="(//td[@class='wordTd'])[21]/span"/>
+                    <element name="Positioninfo"  		type="xpath"       	value="(//td[@class='span-td'])[21]/span"/>
+                    <element name="serialRemarkLabel"  		type="xpath"       	value="(//td[@class='wordTd'])[22]/span"/>
+                    <element name="serialRemarkinfo"  		type="xpath"       	value="(//td[@class='span-td'])[22]/span"/>
+
+                    <!-- Provider的界面 -->   
+                    <element name="ProviderChannelLabel"  		type="xpath"       	value="(//td[@class='wordTd'])[24]/span"/>
+                    <element name="ProviderChannelinfo"  		type="xpath"       	value="(//td[@class='span-td'])[24]/span"/>
+                    <element name="ProviderNameLabel"  		type="xpath"       	value="(//td[@class='wordTd'])[25]/span"/>
+                    <element name="ProviderNameinfo"  		type="xpath"       	value="(//td[@class='span-td'])[25]/span"/>
+                    <element name="LocationLabel"  		    type="xpath"       	value="(//td[@class='wordTd'])[26]/span"/>
+                    <element name="Locationinfo"  		    type="xpath"       	value="(//td[@class='span-td'])[26]/span"/>
+                    <element name="providerRemarkLabel"  	type="xpath"       	value="(//td[@class='wordTd'])[27]/span"/>
+                    <element name="providerinfo"  		    type="xpath"       	value="(//td[@class='span-td'])[27]/span"/>
+
+                    <element name="normalsolodeviceBtn"  		type="xpath"       	value="//button[@class='btn btn-xs device-solo active dropdown-toggle']"/>
+                    <!-- 点击normalsolodeviceBtn按钮后出现的选项 -->
+                        <element name="normalcloseBtn"  		    type="xpath"       	value="(//button[@class='btn btn-xs btn-danger-outline device-close'])[2]"/>
+                        <element name="qrcodeBtn"  		            type="xpath"       	value="//button[@class='btn btn-xs btn-info active qrcode']"/>
+                        <element name="rotateLeftBtn"  		        type="xpath"       	value="//button[@ng-click='rotateLeft(serial)']"/>
+                        <element name="rotateRightBtn"  		    type="xpath"       	value="//button[@ng-click='rotateRight(serial)']"/>
+                        <element name="normalreloadScreenBtn"  		type="xpath"       	value="(//button[@ng-click='reloadScreen(serial)'])[2]"/>
+                        <element name="hideScreenBtn"  		        type="xpath"       	value="//button[@class='btn btn-xs btn-info device-screen ng-pristine ng-untouched ng-valid active ng-not-empty']"/>
+                        <element name="fullScreenBtn"  		        type="xpath"       	value="//button[child::i[@class='icon iconfont icon-full-screen']]"/>
+                    		 <element name="fullScreenCancelBtn"  		        type="xpath"       	value="//div[contains(@class,'as-row fill-height')]/descendant::button[contains(@class,'btn btn-xs')]"/>
+                    		
+                    <element name="speedinfo"  			        type="xpath"       	value="((//div[@class='extend-column extend-bottom'])[1]/span)[2]"/>
+                    <element name="timeleftinfo"  			    type="xpath"       	value="//div[@title='Time Left']"/>
+                    <element name="solorenewdeviceBtn"  		type="xpath"       	value="//i[@ng-click='renewDevice()']"/>
+
+                    <!-- Extra info的信息项 -->
+                    <element name="ScreenSizeinfo"  	type="xpath"       	value="(//div[contains(@class,'extend-column ng-scope')])[1]/span"/>
+                    <element name="Versioninfo"  		type="xpath"       	value="(//div[contains(@class,'extend-column ng-scope')])[2]/span"/>
+                    <element name="Brandinfo"  		    type="xpath"       	value="(//div[contains(@class,'extend-column ng-scope')])[3]/span"/>
+                    <element name="Platforminfo"  		type="xpath"       	value="(//div[contains(@class,'extend-column ng-scope')])[4]/span"/>
+                    <element name="IMEIinfo"  			type="xpath"       	value="(//div[contains(@class,'extend-column ng-scope')])[5]/span"/>
+                    <element name="ICCIDinfo"  		    type="xpath"       	value="(//div[contains(@class,'extend-column ng-scope')])[6]/span"/>
+                    <element name="Widthinfo"  		    type="xpath"       	value="(//div[contains(@class,'extend-column ng-scope')])[7]/span"/>
+                    <element name="Heightinfo"  		type="xpath"       	value="(//div[contains(@class,'extend-column ng-scope')])[8]/span"/>
+
+                    <!-- 模拟显示的设备按钮 -->
+                    <element name="MenuBtn"  			    type="xpath"       	value="//a[@class='btn btn-primary btn-lg no-transition device-control-key-menu']/i"/>
+                    <element name="HomeBtn"  			    type="xpath"       	value="//a[@class='btn btn-primary btn-lg no-transition device-control-key-home']/i"/>
+                    <element name="BackBtn"  			    type="xpath"       	value="//a[@class='btn btn-primary btn-lg no-transition device-control-key-back']/i"/>
+
+                    <!-- 设备屏幕右侧菜单 -->
+                    <!-- 竖屏设备屏幕右侧菜单 -->
+                    <element name="DefaultMenu"  		    type="xpath"       	value="//div[contains(@class,'device-operate-action-handle operate-action-screenshot active')]/i"/>
+                    <element name="ScreenshotMenu"  		type="xpath"       	value="//div[contains(@class,'device-operate-action-handle operate-action-screenshot')]/i"      view="currentUse:screenshotL"/>
+                    <element name="AppsMenu"  		        type="xpath"       	value="//div[contains(@class,'device-operate-action-handle operate-action-apps')]/i"            view="currentUse:appsL"/>
+                    <element name="AdvancedMenu"  		    type="xpath"       	value="//div[contains(@class,'device-operate-action-handle operate-action-advanced')]/i"        view="currentUse:advancedL"/>
+                    <element name="FileExploreMenu"  		type="xpath"       	value="//div[contains(@class,'device-operate-action-handle operate-action-explorer')]/i"        view="currentUse:fileexploreL"/>
+                    <element name="InfoMenu"  		        type="xpath"       	value="//div[contains(@class,'device-operate-action-handle operate-action-info')]/i"            view="currentUse:infoL"/>
+                    <element name="LogsMenu"  		        type="xpath"       	value="//div[contains(@class,'device-operate-action-handle operate-action-logs')]/i"            view="currentUse:logsL"/>
+                    
+                    <!-- 横屏设备屏幕右侧菜单 -->
+                    <element name="RightMenuExpand"  		type="xpath"       	value="//div[contains(@class,'device-operate-pnl-handle')]/i" />
+
+                </screenL>
+                
+                <!-- 
+					Android single control
+					add page, 
+					controlDialog 
+				 -->
+                <renewDialog description="控制设备 确认页面 " >
+			  		<element name="controlDeviceConfirm"  		type="xpath" 		value="//div[@class='modal-body']" />
+			  		<element name="cdcDuration10min"  		type="xpath" 		value="//div[@class='btn-group pull-left']/button[1]" />
+			  		<element name="cdcDuration20min"  		type="xpath" 		value="//div[@class='btn-group pull-left']/button[2]" />
+			  		<element name="cdcDuration30min"  		type="xpath" 		value="//div[@class='btn-group pull-left']/button[3]" />
+			  		<element name="cdcDuration1h"  		type="xpath" 		value="//div[@class='btn-group pull-left']/button[4]" />
+			  		<element name="cdcDurationCustomer"  		type="xpath" 		value="//input[contains(@class,'form-control')][parent::div[contains(@class,'input-group')]]" />
+			  		
+			  		<element name="confirmButtonByControl"  	type="xpath" 		value="//div[@class='modal-footer']//button[contains(@ng-click,'ok')]" />
+		  			
+		  			<element name="renewDeviceChargedInfo"  		type="xpath" 		value="//div[@class='growl-message ng-binding ng-scope']/h4" />
+		  		
+				</renewDialog>
+				
+				<!-- 
+					Android single control
+					add
+					DisplayedScreenshot,ScreenshotShowingNumItem,SelectAllBtn2,DisplayedSCAndLoadMore
+				
+				 -->
+                <screenshotL description="Current Use页面中screenshot界面元素">
+					
+					<element name="ScreenshotRightItem"  		    type="xpath"       	value="//p[contains(text(),'Screenshot')]"/>
+                    <element name="ScreenshotBtn"  		    type="xpath"       	value="//button[contains(@ng-click,'clickTakeScreenShot')]/span"/>
+                    <element name="DownloadBtn"  		    type="xpath"       	value="//button[contains(@ng-click,'downLoad')]/span"/>
+                    <element name="MoreImagesBtn"  		    type="xpath"       	value="//button[contains(@ng-click,'moreImage')]/span"/>
+                    <element name="SelectAllBtn"  		    type="xpath"       	value="//button[contains(@ng-click,'toggleSelectAll')]/span"/>
+                    <element name="SelectAllBtn2"  		    type="xpath"       	value="//div[@class='heading']/button[contains(@ng-click,'toggleSelectAll')]"/>
+                    <element name="devicenamelabel"  		type="xpath"       	value="//button[contains(@ng-click,'moreImage')]/span"/>
+                    
+                    <element name="DisplayedScreenshot"  		type="xpath"       	value="//div[contains(@class,'img-block')]/a[contains(@class,'screen-img')]"/>
+                    <element name="DisplayedSCAndLoadMore"  		type="xpath"       	value="//div[contains(@class,'img-block mlg') and contains(@ng-click,'device')]"/>
+					<element name="ScreenshotShowingNumItem"  		type="xpath"       	value="//div[contains(@class,'margin')]/div[contains(@class,'showing')]"/>
+					
+                </screenshotL>
+
+				<!-- AndroidSingleControl
+					Add
+					
+				 -->
+                <appsL>
+                    <element name="UploadBtn"  		        type="xpath"       	value="//button[contains(@class,'btn btn-sm btn-primary btn-app-upload')]/span"/>
+                    <element name="RemoveBtn"  		        type="xpath"       	value="//button[contains(@class,'btn btn-sm btn-primary btn-remove')]/span"/>
+
+               		<element name="InstallBtn"  		        type="xpath"       	value="//table[contains(@class,'border-top')]/descendant::span[contains(@class,'action-install')]"/>
+               		<element name="InstallSuccessMsg"  		        type="xpath"       	value="//div[contains(@class,'growl-message ng-binding')]"/>
+               		
+               		<!--EditBtn， First category with first software Name  -->
+               		<element name="EditApp1"  		        type="xpath"       	value="//span[@class='action-botton text-info'][child::i[@class='icon iconfont icon-edit']]"/>
+               		<element name="EditAppFileName1"  		        type="xpath"       	value="//div[@class='modal-body']/div/div/input"/>
+               		<element name="EditAppRemark1"  		        type="xpath"       	value="//div[@class='modal-body']/div[2]/input"/>
+               		
+               		<element name="EditAppSubmitBtn"  		        type="xpath"       	value="//button[@class='btn btn-primary btn-sm pull-right'][descendant::span[text()='Submit']]"/>
+               		<element name="EditAppCloseBtn"  		        type="xpath"       	value="//button[@class='btn btn-default-outline btn-sm text-center'][descendant::span[text()='Close']]"/>
+               		
+               		
+               		<!--downloadBtn， First category with first software Name  -->
+               		<element name="downloadappname1"  		        type="xpath"       	value="//div[contains(@class,'version-scripts')]/descendant::td[contains(@class,'binding')][1]"/>
+               		<element name="downloadBtn1"  		        type="xpath"       	value="//table[contains(@class,'border-top')]/descendant::span[contains(@ng-click,'downloadApp')]"/>
+               		
+                </appsL>
+
+                <advancedL>
+                    <element name="Clipboardlable"  		type="xpath"       	value="//div[contains(@class,'widget-container fluid-height stf-clipboard ng-scope')]//span"/>
+                    <element name="getClipboardBtn"  		type="xpath"       	value="//button[contains(@ng-click,'getClipboardContent')]/i"/>
+                    <element name="Navigationlable"  		type="xpath"       	value="//div[contains(@class,'widget-container fluid-height stf-navigation ng-scope')]/div[@class='heading']//span[@class='ng-scope']"/>
+                    <element name="AdvancedInputlable"  	type="xpath"       	value="//div[contains(@class,'widget-container stf-input fluid-height ng-scope')]/div[@class='heading']//span[@class='ng-scope']"/>
+                    <element name="Shelllable"  		    type="xpath"       	value="//div[contains(@class,'widget-container fluid-height stf-shell ng-scope')]/div[@class='heading']//span[@class='ng-scope']"/>
+					
+					<element name="NavigationTextfield"  		    type="xpath"       	value="//div[@class='heading']/following-sibling::div[contains(@class,'widget')]/descendant::input[@name='textURL']"/>
+							<element name="NavigationTextfieldSubmitBtn"  		    type="xpath"       	value="//div[@class='input-group-btn']/button[@ng-click='openURL()']"/>
+							<element name="NavigationTextfieldClearBtn"  		    type="xpath"       	value="//div[@class='heading']/descendant::button[@ng-click='clearSettings()']"/>
+				
+					<element name="ClipboardTextfield"  		    type="xpath"       	value="//div[contains(@class,'widget-container fluid-height stf-shell ng-scope')]/div[@class='heading']//span[@class='ng-scope']"/>
+					
+					
+                </advancedL>
+
+                <fileexploreL>
+                    <element name="dirUpBtn"  		        type="xpath"       	value="//button[contains(@ng-click,'dirUp')]"/>
+                    <element name="dirInput"  		        type="xpath"       	value="//input[contains(@ng-enter,'dirEnterLocation')]"/>
+                    <element name="submitBtn"  		        type="xpath"       	value="(//button[@class='btn btn-primary-outline'])[2]/i"/>
+                    <element name="namelabel"  		        type="xpath"       	value="(//table[contains(@class,'dataTable')]/thead/tr/th)[1]//span"/>
+                    <element name="sizelabel"  		        type="xpath"       	value="(//table[contains(@class,'dataTable')]/thead/tr/th)[2]//span"/>
+                    <element name="datelabel"  		        type="xpath"       	value="(//table[contains(@class,'dataTable')]/thead/tr/th)[3]//span"/>
+                    <element name="permissionslabel"  		type="xpath"       	value="(//table[contains(@class,'dataTable')]/thead/tr/th)[4]//span"/>
+                </fileexploreL>
+
+                <infoL>
+                    <element name="deviceinfoBtn"  		        type="xpath"       	value="//button[contains(@ng-click,'control.identify')]"/>
+
+                </infoL>
+
+                <logsL>
+                    <element name="getBtn"  		        type="xpath"       	value="(//table[contains(@class,'logcat-filters-table')]//tr/td)[1]/button"/>
+                    <!-- <element name="getBtn"  		        type="xpath"       	value="//button[contains(@class,'btn btn-xs btn-primary-outline ng-pristine ng-valid ng-not-empty ng-touched')]"/> -->
+                    <element name="levelList"  		        type="xpath"       	value="//select[contains(@class,'level-sel ng-pristine ng-untouched ng-valid ng-empty')]"/>
+                    <!-- 点击levelList后出现的选项 -->
+                        <element name="levelOpt"  		        type="xpath"       	value="//select[contains(@class,'level-sel ng-pristine ng-untouched ng-valid ng-empty')]/option[1]"/>
+                        <element name="verboseOpt"  		    type="xpath"       	value="//select[contains(@class,'level-sel ng-pristine ng-untouched ng-valid ng-empty')]/option[2]"/>
+                        <element name="debugOpt"  		        type="xpath"       	value="//select[contains(@class,'level-sel ng-pristine ng-untouched ng-valid ng-empty')]/option[3]"/>
+                        <element name="infoOpt"  		        type="xpath"       	value="//select[contains(@class,'level-sel ng-pristine ng-untouched ng-valid ng-empty')]/option[4]"/>
+                        <element name="warnOpt"  		        type="xpath"       	value="//select[contains(@class,'level-sel ng-pristine ng-untouched ng-valid ng-empty')]/option[5]"/>
+                        <element name="errorOpt"  		        type="xpath"       	value="//select[contains(@class,'level-sel ng-pristine ng-untouched ng-valid ng-empty')]/option[6]"/>
+                        <element name="fatalOpt"  		        type="xpath"       	value="//select[contains(@class,'level-sel ng-pristine ng-untouched ng-valid ng-empty')]/option[7]"/>
+
+                    <element name="timeInput"  		        type="xpath"       	value="(//table[contains(@class,'logcat-filters-table')]//tr/td)[3]/input"/>
+                    <element name="pidInput"  		        type="xpath"       	value="(//table[contains(@class,'logcat-filters-table')]//tr/td)[4]/input"/>
+                    <element name="tidInput"  		        type="xpath"       	value="(//table[contains(@class,'logcat-filters-table')]//tr/td)[5]/input"/>
+                    <element name="tagInput"  		        type="xpath"       	value="(//table[contains(@class,'logcat-filters-table')]//tr/td)[6]/input"/>
+                    <element name="textInput"  		        type="xpath"       	value="(//table[contains(@class,'logcat-filters-table')]//tr/td)[7]/input"/>
+                    <element name="clearBtn"  		        type="xpath"       	value="//button[contains(@ng-click,'clearTable')]"/>
+                    <element name="copyBtn"  		        type="xpath"       	value="//button[contains(@ng-click,'copyLog')]"/>
+                </logsL>
+            </areas>
+            </page>
+
+            <page name="alldevices" defaultView="groupview" description = "Current Use页面元素">
+                <!-- 从Deviced页面进入    -->
+                <view name="groupview" 			areas="[common,login,leftopt,alldevicestop,groupview]" />
+                <view name="listview" 			areas="[common,login,leftopt,alldevicestop,listview]" /><!-- 本页面的弹出界面或确认框    -->
+            <areas>
+
+                <alldevicestop description="All Devices页面顶部公用部分元素">
+                    <!-- All Devices公用部分 顶部菜单 -->
+					
+                    <!-- User -->
+                    <element name="allgroupsMenu"  				type="xpath"       	value="//div[1]/div[3]/div/div/div/div[1]/span[1]/a/span[1]"/>
+                    <!-- 点击All Groups 按钮后出现All Groups和设备组 -->
+                    <element name="All Groups"  				type="xpath"       	value="(//li[contains(@ng-click,'selectGroup')])[1]//span"/>
+                    <element name="firstGroup"  				type="xpath"       	value="//div[@class='select-dropdown ng-scope dropdown open']//li[2]]"/>
+                    <element name="groupslist"     				type="xpath"       	value="(//a[@class='btn btn-default dropdown-toggle']//span[@class='ng-binding'])[1]"/>
+                    <element name="firstnewgroup"     			type="xpath"       	value="(//li[@ng-repeat='groups in groupDeviceList'])[2]"/>
+                    <element name="allstatusMesu"				type="xpath"       	value="(//a[@class='btn btn-default dropdown-toggle'])[3]"/>
+                    <!-- 点击allstatusMesu后出现All Groups和设备组 -->
+
+                    <element name="allstatus"				type="xpath"       	value="//a/span[text()='All Status']"/>
+                    <element name="InUse"				        type="xpath"       	value="(//li[contains(@ng-repeat,'statusList')])[1]"/>
+                    <element name="Availale"				    type="xpath"       	value="(//li[contains(@ng-repeat,'statusList')])[2]"/>
+                    <element name="Busy"				        type="xpath"       	value="(//li[contains(@ng-repeat,'statusList')])[3]"/>
+                    <element name="Disconnected"				type="xpath"       	value="(//li[contains(@ng-repeat,'statusList')])[4]"/>
+
+                    <element name="allplatformsMenu"			type="xpath"       	value="//span[text()='All Platforms']"/>
+                    <element name="allbrandsMenu"				type="xpath"       	value="//span[text()='All Brands']"/>
+                    <element name="morefilterMenu"				type="xpath"       	value="//span[text()='More Filter']"/>
+
+                    <!-- System Admin -->
+                    <element name="allcompaniesMenu"			type="xpath"       	value="//span[text()='All Companies']"/>
+
+                    <!-- All Devices公用部分 顶部按钮 -->
+
+                    <!-- User -->
+                    <element name="controlButton"  				type="xpath"       	value="//button[contains(@ng-click,'control()')]"  view="currentUse:renewDialog"/>
+                    <element name="alldevicesMenu_controlBtn_Disable"  		type="xpath"       	value="//button[contains(@ng-click,'control()')][@disabled='disabled']"/>
+                    <!-- Control确认框 -->
+                    <element name="controltimealert"  		    type="xpath"       	value="//div[contains(@class,'alert alert-info padding-15 ng-scope')]//span"/>
+                    <element name="controltimeinput"  		    type="xpath"       	value="//input[contains(@ng-model,'controlTime')]"/>
+                    <element name="controltimeunit"  		    type="xpath"       	value="//div[contains(@class,'input-group-addon')]"/>
+                    <element name="controlconfirm"  		    type="xpath"       	value="//button[@ng-click='ok()']"                                  view="currentUse:screenshotL"/>
+                    <element name="alldevicesMenu_groupBtn"  		type="xpath"       	value="//button[contains(@ng-click,'addToDeviceGroup()')]" />
+                    <element name="alldevicesMenu_groupBtn_Disable"  		type="xpath"       	value="//button[contains(@ng-click,'addToDeviceGroup()')][@disabled='disabled']" />
+                    <element name="alldevicesMenu_bookBtn"  		type="xpath"       	value="//button[contains(@ng-click,'book()')]" />
+                    <element name="alldevicesMenu_bookBtn_Disable"  		type="xpath"       	value="//button[contains(@ng-click,'book()')][@disabled='disabled']" />
+
+                    <element name="releaseButton"  				type="xpath"       	value="//span[text()='Release']" />
+                    <element name="alldevicesMenu_releaseBtn_Disable"  		type="xpath"       	value="//button[contains(@class,'btn-assign-device')][@disabled='disabled']" />
+                    <!-- Release确认框 -->
+                    <element name="releaseconfirmBtn"  			type="xpath"       	value="//button[@ng-click='ok()']" />
+                    <element name="recentinuseDevice"    		type="xpath"       	value="//span[@class='btn-xs device-status In Use']" />
+                    <element name="alertmessage"    		    type="xpath"       	value="//div[containt(@ng-class,'alertClasses')]" />
+
+                    <element name="clearButton"     			type="xpath"       	value="//i[contains(@uib-tooltip,'Clear All Selected')]" />
+                    <element name="groupviewButton"     		type="xpath"       	value="//i[@class='icon iconfont icon-group']" 						view="alldevices:groupview"/>
+                    <element name="listviewButton"     			type="xpath"       	value="//i[@class='icon iconfont icon-List']" 						view="alldevices:listview" />
+
+                    <!-- System Admin -->
+                    <element name="moreButton"     				type="xpath"       	value="//span[@uib-tooltip='More Actions']/div/a" />
+                    <!-- 点击more 按钮后出现 Backup button & Restore button & Delete button -->
+                    <element name="backupButton"  				type="xpath"       	value="//*[@uib-tooltip='Back up the selected devices']//span[@class='ng-scope']" />
+                    <element name="restoreButton"  				type="xpath"       	value="//*[@uib-tooltip='Restore the selected devices.']//span[@class='ng-scope']" />
+                    <element name="deleteButton"  				type="xpath"       	value="//span[text()='Delete']" />
+                    <element name="companyviewButton"     		type="xpath"       	value="//i[@uib-tooltip='Company View']" 			view="alldevices:companyview" />
+                    <element name="teamviewButton"     			type="xpath"       	value="//i[@uib-tooltip='Team View']" 				view="alldevices:teamview"/>
+
+
+                    <!-- list view -->
+                    <element name="selectallCB"     				type="xpath"       	value="//div[@class='table-list']//th/div" />
+                    <element name="selectallinuseDevices"     		type="xpath"       	value="//div[@class='check-box icon iconfont pointer icon-checkbox']" />
+
+                    <element name="nodevices"     				type="xpath"       	value="//div[@class='nothing-to-show']" />
+
+                </alldevicestop>
+
+                <leftopt>
+                    <!--<leftOption description="左边选项">-->
+                    <element name="RecentUsedMenu"          type="xpath"       value="//span[text()='Recently Used']"      view="recentUsed:defaultview"/>
+                    <element name="groups"              type="xpath"       value="//span[text()='Groups']"      view="groups:defaultview"/>
+                    <element name="devices"             type="xpath"       value="//span[text()='All Devices']"     view="alldevices:groupview" />
+              		<element name="All Devices"             type="xpath"       value="//a[child::span[contains(text(),'All Devices')]]"     view="alldevices:groupview" />
+                </leftopt>
+
+
+
+                <!-- Group View界面部分  -->
+                <groupview description="devices group view">
+
+                    <element name="confirmButton"  				type="xpath"       	value="//button[contains(@ng-click,'ok')]/span" />
+                    <element name="notGrouped"    				type="xpath"       	value="//span[text()='Not Grouped']" />
+                    <element name="firstDevice"    				type="xpath"       	value="//div[@class='device-item ng-scope']/div[@class='device-item-icon ng-isolate-scope']" />
+                    <element name="secondDevice"   				type="xpath"       	value="((//ul[contains(@id,'group')])[1]/li)[2]//img" />
+                    <element name="firstDeviceTitle"    		type="xpath"       	value="//div[@class='device-item ng-scope']/div[@class='device-item-icon ng-isolate-scope']/div[@class='device-name ng-binding']" />
+                    <element name="secondDeviceTitle"   		type="xpath"       	value="(//div[contain(@class,'device-name ng-binding')])[2]"  />
+                    <element name="allDevices"  				type="xpath"  	   	value="//div[@class='device-photo-small']/img" />
+                    <element name="allDevicesStatus"  			type="xpath"  		value="//span[contains(@class,'btn-xs device-status')]" />
+                    <element name="devicesNames"  				type="xpath"  		value="//div[contains(@class,'device-name')]" />
+                    <element name="devicesNamesByFirefox"  		type="xpath"  		value="//ul[contains(@class,'devices-icon-view unselectable')]/li" />
+                    <element name="moreFilters"     			type="xpath"       	value="//*[@uib-tooltip='Check more filters']//span[@class='ng-scope']" />
+                    <element name="AllOS"     					type="xpath"       	value="(//div[@class='more-filters']//span[@class='ng-binding'])[6]" />
+                    <element name="AllOSList"     				type="xpath"       	value="(//span[@class='select-dropdown dropdown open'])//li" />
+                    <element name="firstgroup"					type="xpath"		value="(//div[@class='group-devices'])"/>
+                    <element name="firstdevicebook"				type="xpath"		value="//div[@class='device-item ng-scope']//div[@class='device-book ng-scope']/i"		/>
+                    <element name="quickbook"     				type="xpath"       	value="(//div[contains(@title,'Book Device')]" />
+                    <element name="devicegroups"     					type="xpath"       	value="//div[@class='group-device group-list ng-scope']"/>
+
+                    <element name="photos"   		            type="xpath"       	value="//*[@class='device-item-icon ng-isolate-scope']" />
+                    <element name="firstselectDevice"    		type="xpath"       	value="//div[@class='device-item ng-scope selected-device']/div[@class='device-item-icon ng-isolate-scope']" />
+                    <element name="firstselectDevicename"    	type="xpath"       	value="//div[@class='device-item ng-scope selected-device']/div[@class='device-item-icon ng-isolate-scope']/div[@class='device-name ng-binding']" />
+
+                    <!-- 所有的group定位 -->
+                    <element name="allGroup"        type="xpath" value="//div[@class='group-devices']//h4" />
+                    <element name="allDevices2"     type="xpath"  value="//div[@class='group-devices']//li" />
+
+
+                </groupview>
+
+
+                <!-- List View界面部分  -->
+                <listview description="devices list view">
+                    <element name="Name"						type="xpath"		value="//span[text()='Name']"/>
+                    <!-- <element name="Model"						type="xpath"		value="//table[contains(@class,'device-list-details')]//tr/th[3]/div"/> -->
+                    <element name="Model"						type="xpath"		value="//span[text()='Model']"/>
+                    <element name="Serial"						type="xpath"		value="//span[text()='Serial']"/>
+                    <element name="Provider"					type="xpath"		value="//span[text()='Provider']"/>
+                    <element name="Status"						type="xpath"		value="//span[text()='Status']"/>
+                    <element name="Position"					type="xpath"		value="//span[text()='Position']"/>
+                    <element name="Company"						type="xpath"		value="//span[text()='Company']"/>
+                    <element name="Team"						type="xpath"		value="//span[text()='Team']"/>
+                    <element name="lv_Groups"					type="xpath"		value="//span[text()='Groups']"/>
+                    <element name="devicesnamelist"				type="xpath"		value="//span[contains(@ng-click,'openDeviceInfo(device)')]"/>
+                    <element name="firstdevicecheckbox"			type="xpath"		value="(//table[contains(@class,'fill-height table table-striped table-scroll table-grid table-lg border-top')]/tbody/tr[@class='ng-scope']/td[1]/div"/>
+
+                </listview>
+
+            </areas>
+            </page>
+
+            <page name="recentUsed" defaultView="defaultview" description = "Recent Used页面元素">
+                <view name="defaultview" 			areas="[common,login,leftopt,recentused]" />
+
+                <areas>
+                    <leftopt>
+                        <!--<leftOption description="左边选项">-->
+                        <element name="RecentUsedMenu"      type="xpath"       value="//span[text()='Recently Used']"                                     view="recentUsed:defaultview"/>
+                        <element name="devices"             type="xpath"       value="((//ul[contains(@ng-class,'sub-menu-list')])[3]/li)[3]//span"     view="alldevices:groupview" />
+                    </leftopt>
+
+                    <!-- All Devices公用部分 界面顶部 -->
+                    <recentused description="All Devices页面顶部公用部分元素">
+
+                        <!-- 顶部按钮 -->
+
+                        <!-- User -->
+                        <element name="controlButton"  				type="xpath"       	value="//button[contains(@ng-click,'control()')]"/>
+                        <!-- Control确认框 -->
+                        <element name="controltimealert"  		    type="xpath"       	value="//div[contains(@class,'alert alert-info padding-15 ng-scope')]"/>
+                        <element name="controltimeinput"  		    type="xpath"       	value="//input[contains(@ng-model,'controlTime')]"/>
+                        <element name="controltimeunit"  		    type="xpath"       	value="//div[contains(@class,'input-group-addon')]"/>
+                        <element name="controlconfirm"  		    type="xpath"       	value="//button[@ng-click='ok()']"                                  view="currentUse:screenshotL"/>
+
+                        <element name="releaseBtn"  				type="xpath"       	value="//span[text()='Release']" />
+                        <!-- Release确认框 -->
+                        <element name="releaseconfirmBtn"  			type="xpath"       	value="//button[@ng-click='ok()']" />
+                        <element name="recentinuseDevice"    		type="xpath"       	value="//span[@class='btn-xs device-status In Use']" />
+
+                    </recentused>
+
+                </areas>
+            </page>
+
+            <page name="groups" defaultView="defaultview" description = "Groups页面元素">
+                <view name="defaultview" 		areas="[common,login,leftopt,groupstop,groupsbottom,grouptable]" />
+                <view name="addnewgroup"        areas="[addnewgroup]"/>
+                <areas>
+                    <leftopt>
+                        <!--<leftOption description="左边选项">-->
+                        <element name="groups"              type="xpath"       value="//span[text()='Groups']"      view="groups:defaultview"/>
+                        <element name="devices"             type="xpath"       value="//span[text()='All Devices']"     view="alldevices:groupview" />
+                    </leftopt>
+
+                    <groupstop description="Groups页面顶部公用部分元素">
+                        <element name="addnewgroupBtn"              type="xpath"       value="//button[contains(@ng-click,'addDeviceGroup')]"      view="groups:addnewgroup"/>
+                        <element name="removeBtn"              type="xpath"       value="//button[contains(@ng-click,'batchRemoveDeviceGroups')]"  />
+                        <!--remove确认框-->
+                        <element name="removeconfirmBtn"              type="xpath"       value="//button[contains(@ng-click,'ok')]"  />
+                        <element name="removecancelBtn"              type="xpath"       value="(//button[contains(@ng-click,'cancel')])[2]"  />
+
+                    </groupstop>
+
+                    <grouptable description="Groups页面列表部分元素">
+                        <!-- 无设备组时的元素  -->
+                        <element name="empty"              type="xpath"       value="//div[contains(@class,'list_empty')]"/>
+                        <!-- 有设备组时的元素  -->
+                        <element name="selectallCheckbox"           type="xpath"       value="(//table[contains(@class,'table-striped')]//th)[1]/input"/>
+                        <element name="groupnamelabel"              type="xpath"       value="(//table[contains(@class,'table-striped')]//th)[2]//span"/>
+                        <element name="platformlabel"               type="xpath"       value="(//table[contains(@class,'table-striped')]//th)[3]//span"/>
+                        <element name="totaldeviceslabel"           type="xpath"       value="(//table[contains(@class,'table-striped')]//th)[4]//span"/>
+                        <element name="createdatelabel"             type="xpath"       value="(//table[contains(@class,'table-striped')]//th)[5]//span"/>
+                        <element name="actionlabel"                 type="xpath"       value="(//table[contains(@class,'table-striped')]//th)[6]//span"/>
+                        <element name="selectCheckbox"              type="xpath"       value="//input[contains(@ng-click,'toggleDeviceGroups')]"/>
+                        <element name="groupname"                   type="xpath"       value="(//table[contains(@class,'table-striped')]//td)[2]//span"/>
+                        <element name="platform"                    type="xpath"       value="(//table[contains(@class,'table-striped')]//td)[3]//span"/>
+                        <element name="totaldevices"                type="xpath"       value="(//table[contains(@class,'table-striped')]//td)[4]//span"/>
+                        <element name="createdate"                  type="xpath"       value="(//table[contains(@class,'table-striped')]//td)[5]//span"/>
+                        <element name="action"                      type="xpath"       value="(//table[contains(@class,'table-striped')]//td)[6]//span"/>
+
+                    </grouptable>
+
+                    <groupsbottom description="Groups页面底部公用部分元素">
+
+                    </groupsbottom>
+
+                    <addnewgroup>
+                        <element name="cancelBtn"              type="xpath"       value="//button[text()='Cancel')]"      view="groups:defaultview"/>
+                        <element name="submitBtn"              type="xpath"       value="//button[text()='Submit')]"      view="groups:defaultview"/>
+                    </addnewgroup>
+                </areas>
+
+
+            </page>
+
+            <page name="rate" defaultView="pricingsettings" description = "Pricing Settings页面元素">
+                <view name="pricingsettings" 		areas="[common,login,leftopt,ratetop,pricesettings]" />
+
+                <areas>
+                    <ratetop>
+                        <!-- 页面顶部tab项  -->
+                        <element name="rate_auto-rechargesettingsTab"   type="xpath"       value="(//div[contains(@class,'rate-tab')])[1]"/>
+                        <element name="rate_dpcsettingsTab"             type="xpath"       value="(//div[contains(@class,'rate-tab')])[2]"/>
+                        <element name="rate_pricingsettingsTab"         type="xpath"       value="(//div[contains(@class,'rate-tab')])[3]"/>
+                        <element name="rate_ratinghotTab"               type="xpath"       value="(//div[contains(@class,'rate-tab')])[4]"/>
+                    </ratetop>
+
+                    <pricesettings>
+                        <element name="rate_pricingsettingsTab_pemiumdeviceIcon"   type="xpath"       value="(//div[contains(@class,'pricing-level')])[1]//i"/>
+                        <element name="rate_pricingsettingsTab_pemiumdeviceText"   type="xpath"       value="(//div[contains(@class,'pricing-level')])[1]//i/span"/>
+                        <element name="rate_pricingsettingsTab_pemiumpriceText"   type="xpath"       value="((//div[contains(@class,'pricing-level')])[1]//div[contains(@ng-if,'currentAdjustPrice != row.deviceTag')])[1]/span[contains(@clas,'text-success ng-binding')]"/>
+                        <element name="rate_pricingsettingsTab_pemiumpriceunitText"   type="xpath"       value="((//div[contains(@class,'pricing-level')])[1]//div[contains(@ng-if,'currentAdjustPrice != row.deviceTag')])[1]/span[contains(@clas,'text-success padding-left-5 ng-binding')]"/>
+                        <element name="rate_pricingsettingsTab_pemiumpricemodelBtn"   type="xpath"       value="((//div[contains(@class,'pricing-level')])[1]//div[contains(@ng-if,'currentAdjustPrice != row.deviceTag')])[1]//span[contains(@ng-click,'goToModelList')]"/>
+                        <element name="rate_pricingsettingsTab_pemiumpricemodelBtn"   type="xpath"       value="((//div[contains(@class,'pricing-level')])[1]//div[contains(@ng-if,'currentAdjustPrice != row.deviceTag')])[1]//span[contains(@ng-click,'goToDeviceList')]"/>
+
+                        <element name="rate_pricingsettingsTab_specialdeviceIcon"   type="xpath"       value="(//div[contains(@class,'pricing-level')])[2]//i"/>
+                        <element name="rate_pricingsettingsTab_specialdeviceText"    type="xpath"       value="(//div[contains(@class,'pricing-level')])[2]//i/span"/>
+                        <element name="rate_pricingsettingsTab_specialpriceText"     type="xpath"       value="((//div[contains(@class,'pricing-level')])[2]//div[contains(@ng-if,'currentAdjustPrice != row.deviceTag')])[1]/span[contains(@clas,'text-success ng-binding')]"/>
+                        <element name="rate_pricingsettingsTab_specialpriceunitText"   type="xpath"       value="((//div[contains(@class,'pricing-level')])[2]//div[contains(@ng-if,'currentAdjustPrice != row.deviceTag')])[1]/span[contains(@clas,'text-success padding-left-5 ng-binding')]"/>
+                        <element name="rate_pricingsettingsTab_specialpricemodelBtn"   type="xpath"       value="((//div[contains(@class,'pricing-level')])[2]//div[contains(@ng-if,'currentAdjustPrice != row.deviceTag')])[1]//span[contains(@ng-click,'goToModelList')]"/>
+                        <element name="rate_pricingsettingsTab_specialpricemodelBtn"   type="xpath"       value="((//div[contains(@class,'pricing-level')])[2]//div[contains(@ng-if,'currentAdjustPrice != row.deviceTag')])[1]//span[contains(@ng-click,'goToDeviceList')]"/>
+
+                        <element name="rate_pricingsettingsTab_regulardeviceIcon"   type="xpath"       value="(//div[contains(@class,'pricing-level')])[3]//i"/>
+                        <element name="rate_pricingsettingsTab_regulardeviceText"    type="xpath"       value="(//div[contains(@class,'pricing-level')])[3]//i/span"/>
+                        <element name="rate_pricingsettingsTab_regularpriceText"     type="xpath"       value="((//div[contains(@class,'pricing-level')])[3]//div[contains(@ng-if,'currentAdjustPrice != row.deviceTag')])[1]/span[contains(@clas,'text-success ng-binding')]"/>
+                        <element name="rate_pricingsettingsTab_regularpriceunitText"   type="xpath"       value="((//div[contains(@class,'pricing-level')])[3]//div[contains(@ng-if,'currentAdjustPrice != row.deviceTag')])[1]/span[contains(@clas,'text-success padding-left-5 ng-binding')]"/>
+                        <element name="rate_pricingsettingsTab_regularpricemodelBtn"   type="xpath"       value="((//div[contains(@class,'pricing-level')])[3]//div[contains(@ng-if,'currentAdjustPrice != row.deviceTag')])[1]//span[contains(@ng-click,'goToModelList')]"/>
+                        <element name="rate_pricingsettingsTab_regularpricemodelBtn"   type="xpath"       value="((//div[contains(@class,'pricing-level')])[3]//div[contains(@ng-if,'currentAdjustPrice != row.deviceTag')])[1]//span[contains(@ng-click,'goToDeviceList')]"/>
+
+                        <element name="rate_pricingsettingsTab_simcardIcon"   type="xpath"       value="(//div[contains(@class,'pricing-level')])[4]//i"/>
+                        <element name="rate_pricingsettingsTab_simcardText"    type="xpath"       value="(//div[contains(@class,'pricing-level')])[4]//i/span"/>
+                        <element name="rate_pricingsettingsTab_simcardpriceText"     type="xpath"       value="((//div[contains(@class,'pricing-level')])[4]//div[contains(@ng-if,'currentAdjustPrice != row.deviceTag')])[1]/span[contains(@clas,'text-success ng-binding')]"/>
+                        <element name="rate_pricingsettingsTab_simcardpriceunitText"   type="xpath"       value="((//div[contains(@class,'pricing-level')])[4]//div[contains(@ng-if,'currentAdjustPrice != row.deviceTag')])[1]/span[contains(@clas,'text-success padding-left-5 ng-binding')]"/>
+                        <element name="rate_pricingsettingsTab_simcardpricemodelBtn"   type="xpath"       value="((//div[contains(@class,'pricing-level')])[4]//div[contains(@ng-if,'currentAdjustPrice != row.deviceTag')])[1]//span[contains(@ng-click,'goToModelList')]"/>
+                        <element name="rate_pricingsettingsTab_simcardpricemodelBtn"   type="xpath"       value="((//div[contains(@class,'pricing-level')])[4]//div[contains(@ng-if,'currentAdjustPrice != row.deviceTag')])[1]//span[contains(@ng-click,'goToDeviceList')]"/>
+                    </pricesettings>
+                </areas>
+
+            </page>
+
+
+        </pages>
+	</UiMap>
+</test-data>

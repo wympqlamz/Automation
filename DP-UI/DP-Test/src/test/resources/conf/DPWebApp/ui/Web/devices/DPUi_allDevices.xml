@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-data>
+
+		<UiMap>
+		    <application>
+				<DefaultPage>alldevices</DefaultPage>
+				<AppName>Devicepass</AppName>
+				<Version>0.9.45</Version>
+				<Environment>QA</Environment>
+				<TestCategory>Web</TestCategory>
+				<NetWork>Local Connection</NetWork>
+				<Description>保存Devicepass所有页面的元素定位</Description>
+			</application>
+			<pages>
+
+				<page name="alldevices" defaultView="groupview" description = "All Devices页面元素" >
+						<!-- 本页面的弹出界面或确认框    -->
+				 		<view name="companyview" 		areas="[common,login,leftopt,alldevicestop,companyview]" />
+				 		<view name="teamview" 			areas="[common,login,leftopt,alldevicestop,teamview]" />
+				 		<view name="groupview" 			areas="[common,login,leftopt,alldevicestop,groupview]" />
+				 		<view name="listview" 			areas="[common,login,leftopt,alldevicestop,listview]" />
+                      	<view name="createdevicegroup" 	areas="[addDeviceToGroup]" />
+				 		<view name="bookDeviecs" 		areas="[bookDevices]" />
+				 <!-- operate,Run,renameApp,startAutomation 这个4个areas之前没有，需要新建 -->
+				 <!-- 	<view name="control" 			areas="[common,login,controlDialog,deviceControl,operate,Run,renameApp,startAutomation,Info]" /> -->
+				 		<view name="control" 			areas="[common,login,leftopt,groupview,controlDialog,deviceControl,Info]" />
+				 		<view name="maintainmodel"		areas="[maintainmodel]"/>
+				 		<view name="devicemodel"		areas="[devicemodel]"/>
+
+
+				 		<areas>
+				 		
+				 			<!-- AndroidSingleControl
+				 			  Add element,
+				 			  All Devices
+				 			  -->
+                            <leftopt>
+                                <!--<leftOption description="左边选项">-->
+                                <element name="groups"              type="xpath"       value="//span[text()='Groups']"      view="groups:defaultview"/>
+                                <element name="devices"             type="xpath"       value="((//ul[contains(@class,'sub-menu-list')])[3]/li)[3]//span"     view="alldevices:groupview" />
+                                <element name="All Devices"             type="xpath"       value="//a[child::span[contains(text(),'All Devices')]]"     view="alldevices:groupview" />
+                            </leftopt>
+
+					 		<!-- All Devices公用部分 界面顶部 -->
+				 			<alldevicestop description="All Devices页面顶部公用部分元素">
+				 				<!-- All Devices公用部分 顶部菜单 -->
+
+				 				<!-- User -->
+				 				<element name="allgroupsMenu"  				type="xpath"       	value="//div[1]/div[3]/div/div/div/div[1]/span[1]/a/span[1]"/>
+				 					<!-- 点击All Groups 按钮后出现All Groups和设备组 -->
+				 					<element name="All Groups"  				type="xpath"       	value="(//li[contains(@ng-click,'selectGroup')])[1]//span"/>
+				 					<element name="firstGroup"  				type="xpath"       	value="//div[@class='select-dropdown ng-scope dropdown open']//li[2]]"/>
+                                    <element name="groupslist"     				type="xpath"       	value="(//a[@class='btn btn-default dropdown-toggle']//span[@class='ng-binding'])[1]"/>
+                                    <element name="firstnewgroup"     			type="xpath"       	value="(//li[@ng-repeat='groups in groupDeviceList'])[1]"/>
+				 				<element name="allstatusMesu"				type="xpath"       	value="//span[text()='All Status']"/>
+				 				<element name="allplatformsMenu"			type="xpath"       	value="//span[text()='All Platforms']"/>
+				 				<element name="allbrandsMenu"				type="xpath"       	value="//span[text()='All Brands']"/>
+				 				<element name="morefilterMenu"				type="xpath"       	value="//span[text()='More Filter']"/>
+
+				 				<!-- System Admin -->
+				 				<element name="allcompaniesMenu"			type="xpath"       	value="//span[text()='All Companies']"/>
+
+				 				<!-- All Devices公用部分 顶部按钮 -->
+
+				 				<!-- User -->
+				 				<element name="controlButton"  				type="xpath"       	value="//div[contains(@class,'app-content')]/descendant::button[contains(@ng-click,'control()')]"          			view="alldevices:control" />
+							    <element name="bookButton"  				type="xpath"       	value="//span[text()='Book']"  										view ="alldevices:bookDeviecs"  />
+							    <element name="groupButton"    				type="xpath"       	value="//span[text()='Group']"       								view ="alldevices:createdevicegroup" />
+							    <element name="releaseButton"  				type="xpath"       	value="//span[text()='Release']" />
+							    <element name="clearButton"     			type="xpath"       	value="//i[@uib-tooltip='Clear All Selected']" />
+							    <element name="groupviewButton"     		type="xpath"       	value="//i[@class='icon iconfont icon-group']" 						view="alldevices:groupview"/>
+                                <element name="groupviewBtn_selected"     	type="xpath"       	value="//a[@class='btn active'][@uib-tooltip='Group View']/i" />
+								<element name="listviewButton"     			type="xpath"       	value="//i[@class='icon iconfont icon-List']" 						view="alldevices:listview" />
+                                <element name="listviewBtn_selected"     	type="xpath"       	value="//a[@class='btn active'][@uib-tooltip='List View']/i" 		 />
+
+							    <!-- System Admin -->
+							    <element name="assignButton"    			type="xpath"       	value="//button[contains(@class,'btn-assign-device')]"        		view ="alldevices:assingDevices" />
+							    <element name="moreButton"     				type="xpath"       	value="//span[@uib-tooltip='More Actions']/div/a" />
+							   		<!-- 点击more 按钮后出现 Backup button & Restore button & Delete button -->
+								    <element name="backupButton"  				type="xpath"       	value="//*[@uib-tooltip='Back up the selected devices']//span[@class='ng-scope']" />
+								    <element name="restoreButton"  				type="xpath"       	value="//*[@uib-tooltip='Restore the selected devices.']//span[@class='ng-scope']" />
+								    <element name="deleteButton"  				type="xpath"       	value="//span[text()='Delete']" />
+								<element name="companyviewButton"     		type="xpath"       	value="//i[@uib-tooltip='Company View']" 			view="alldevices:companyview" />
+								<element name="teamviewButton"     			type="xpath"       	value="//i[@uib-tooltip='Team View']" 				view="alldevices:teamview"/>
+
+
+
+				 			</alldevicestop>
+
+				 			<!-- Company View界面部分  -->
+				 			<companyview description="devices by company">
+
+				 			</companyview>>
+
+  				 			<!-- Group View界面部分  -->
+				 			<groupview description="devices group view">
+
+							    <element name="confirmButton"  				type="xpath"       	value="//button[contains(@ng-click,'ok')]/span" />
+							    <element name="notGrouped"    				type="xpath"       	value="//span[text()='Not Grouped']" />
+							    <element name="firstDevice"    				type="xpath"       	value="//div[@class='device-item ng-scope not-selected-device']/div[@class='device-item-icon ng-isolate-scope']" />
+							    <element name="secondDevice"   				type="xpath"       	value="((//ul[contains(@id,'group')])[1]/li)[2]//img" />
+							  	<element name="firstDeviceTitle"    		type="xpath"       	value="//div[@class='device-item ng-scope not-selected-device']/div[@class='device-item-icon ng-isolate-scope']/div[@class='device-name ng-binding']" />
+							    <element name="secondDeviceTitle"   		type="xpath"       	value="(//div[contain(@class,'device-name ng-binding')])[2]"  />
+							  	<element name="allDevices"  				type="xpath"  	   	value="//div[@class='device-photo-small']/img" />
+							  	<element name="allDevicesStatus"  			type="xpath"  		value="//span[contains(@class,'btn-xs device-status')]" />
+							  	<element name="devicesNames"  				type="xpath"  		value="//div[contains(@class,'device-name')]" />
+							  	<element name="devicesNamesByFirefox"  		type="xpath"  		value="//ul[contains(@class,'devices-icon-view unselectable')]/li" />
+								<element name="moreFilters"     			type="xpath"       	value="//*[@uib-tooltip='Check more filters']//span[@class='ng-scope']" />
+								<element name="AllOS"     					type="xpath"       	value="(//div[@class='more-filters']//span[@class='ng-binding'])[6]" />
+								<element name="AllOSList"     				type="xpath"       	value="(//span[@class='select-dropdown dropdown open'])//li" />
+								<element name="firstgroup"					type="xpath"		value="(//div[@class='group-devices'])"/>
+								<element name="firstdevicebook"				type="xpath"		value="(//div[contains(@class,'device-item ng-scope')]//div[@class='device-book ng-scope'])[1]/i"			view ="alldevices:bookDeviecs"/>
+								<element name="quickbook"     				type="xpath"       	value="(//div[contains(@title,'Book Device')]" />
+								<element name="groups"     					type="xpath"       	value="(//div[contains(@class,'group-device group-list ng-scope')]"/>
+
+                                <element name="photos"   		            type="xpath"       	value="//*[@class='device-item-icon ng-isolate-scope']" />
+                                <element name="firstselectDevice"    		type="xpath"       	value="//div[@class='device-item ng-scope selected-device']/div[@class='device-item-icon ng-isolate-scope']" />
+
+                                <element name="booktime"   		            type="xpath"       	value="//span[@class='book-time ng-binding ng-scope']" />
+
+								<!-- 所有的group定位 -->
+							  	<element name="allGroup" type="xpath" value="//div[@class='group-devices']//h4" />
+							  	<element name="allDevices2"  type="xpath"  value="//div[@class='group-devices']//li" />
+
+
+
+							</groupview>
+
+							<!-- List View界面部分  -->
+							<listview description="devices list view">
+								<element name="Name"						type="xpath"		value="//span[text()='Name']"/>
+								<!-- <element name="Model"						type="xpath"		value="//table[contains(@class,'device-list-details')]//tr/th[3]/div"/> -->
+								<element name="Model"						type="xpath"		value="//span[text()='Model']"/>
+								<element name="Serial"						type="xpath"		value="//span[text()='Serial']"/>
+								<element name="Provider"					type="xpath"		value="//span[text()='Provider']"/>
+								<element name="Status"						type="xpath"		value="//span[text()='Status']"/>
+								<element name="Position"					type="xpath"		value="//span[text()='Position']"/>
+								<element name="Company"						type="xpath"		value="//span[text()='Company']"/>
+								<element name="Team"						type="xpath"		value="//span[text()='Team']"/>
+								<element name="Groups"						type="xpath"		value="//span[text()='Groups']"/>
+								<element name="firstdeviceName"				type="xpath"		value="(//table[contains(@class,'fill-height table table-striped table-scroll table-grid table-lg border-top')]/tbody/tr[contains(@class='ng-scope')])[1]/td[1]/span"		view="alldevices:devicemodel"/>
+								<element name="firstdeviceModel"			type="xpath"		value="(//table[contains(@class,'fill-height table table-striped table-scroll table-grid table-lg border-top')]/tbody/tr)[1]/td[3]"				view="alldevices:maintainmodel"/>
+								<element name="devicesnamelist"				type="xpath"		value="//span[contains(@ng-click,'openDeviceInfo(device)')]"/>
+                                <element name="selectallcheckbox"			type="xpath"		value="(//table[contains(@class,'fill-height table table-striped table-scroll table-grid table-lg border-top')]//th)[1]/div"/>
+
+							</listview>
+
+
+							<!-- Maintain model information界面部分  -->
+				 			<maintainmodel description="Maintain model information">
+				 				<element name="Title"						type="xpath"		value="//span[text()='Maintain model information']"/>
+				 				<element name="Name"						type="xpath"		value="//div[@class='title-text']/span"/>
+				 				<element name="Manufacturer"				type="xpath"		value="//table[contains(@class,'table-modal')]/tbody/tr)/th[1]/div"		/>
+
+				 			</maintainmodel>
+
+							<!-- Device model information界面部分  -->
+							<devicemodel description="Device model information">
+				 				<element name="Title"						type="xpath"		value="//span[text()='Device model information']"/>
+				 				<element name="Name"						type="xpath"		value="//div[@class='title-text']/span"/>
+				 				<element name="Manufacturer"				type="xpath"		value="//table[contains(@class,'table-modal')]/tbody/tr)/th[1]/div"		/>
+				 				<element name="close"						type="xpath"		value="//button[@class='close']"/>
+
+				 			</devicemodel>
+
+                            <!-- 添加group组 -->
+							<addDeviceToGroup description="选择设备添加到设备组">
+                                <element name="alldevicesMenu_groupBtn_addnewgroupBtn"                  type="xpath"        value="//button[contains(@ng-click,'addDeviceGroup')]" />
+                                <element name="alldevicesMenu_groupBtn_addnewgroupBtn_groupnameInput"   type="xpath"        value="//input[contains(@class,'form-control group-name')]" />
+                                <element name="alldevicesMenu_groupBtn_addnewgroupBtn_submitBtn"        type="xpath"        value="//*[text()='Save and Manage Group']" />
+                                <element name="alldevicesMenu_groupBtn_submitBtn"                       type="xpath"        value="//*[text()='Submit']"        view="alldevices:groupview"/>
+                                <!--<element name="backupButton"  				type="xpath"       	value="//*[@uib-tooltip='Back up the selected devices']//span[@class='ng-scope']" />-->
+
+							    <element name="groupBtn"                   	type="xpath"        value="//button[contains(@ng-click,'addToDeviceGroup')]" />
+                                <element name="alldevices_managedevicesIcon_addnewgroupBtn"                   	type="xpath"        value="//button[contains(@ng-click,'addDeviceGroup')]" />
+                                <element name="alldevices_managedevicesIcon_addnewgroupBtn_groupnameInput"      type="xpath"        value="//input[contains(@class,'form-control margin-top-5 group-name')]" />
+							    <element name="siteMap"                    	type="xpath"        value="//h4[contains(@class,'modal-title')]/i" />
+							    <element name="modalTitle"                 	type="xpath"        value="//h4[contains(@class,'modal-title')]/span" />
+							    <element name="closeBtn"                   	type="xpath"        value="//button[@class='close']" />
+							    <element name="targetType1"                	type="xpath"        value="(//input[@ng-model='targetType'])[1]" />
+							    <element name="controlLabel1"              	type="xpath"        value="(//label[@class='control-label']/span)[1]" />
+							    <element name="groupName1"                 	type="xpath"        value="(//div[@class='col-sm-4']//span)[1]" />
+							    <element name="inputName"                  	type="xpath"        value="//input[@name='groupName']" />
+							    <element name="targetType2"                	type="xpath"        value="(//input[@ng-model='targetType'])[2]" />
+							    <element name="controlLabel2"              	type="xpath"        value="(//label[@class='control-label']/span)[2]" />
+							    <element name="groupName2"                 	type="xpath"        value="(//div[@class='col-sm-4']//span)[2]" />
+							    <element name="existedName"                	type="xpath"        value="//select[@ng-model='targetDeviceGroup']" />
+							    <element name="cancelBtn"                  	type="xpath"        value="//button[contains(@ng-click,'cancel')]/span" />
+                                <element name="alldevices_managedevicesIcon_addnewgroupBtn_submitBtn"      type="xpath"        value="//button[contains(@class,'btn btn-primary btn-sm pull-right')]" />
+							    <element name="submitBtn"                  	type="xpath"        value="//button[contains(@class,'btn btn-primary btn-sm pull-right')]"     view="alldevices:groupview"/>
+							    <!-- 所有的group定位 -->
+							  	<element name="allGroup" type="xpath" value="//div[@class='group-devices']//h4" />
+							  	<element name="allDevices2"  type="xpath"  value="//div[@class='group-devices']//li" />
+							   	<!-- maoyujia 开始    -->
+								<element name="submit_button"              	type="xpath"        value="(//add-device-to-device-group-modal//button)[2]" view="dashboard:apps" />
+								<element name="phone_status"            	type="xpath"        value="//span[contains(@class,'device-status')]" />
+								<!-- maoyujia 结束    -->
+							</addDeviceToGroup>
+
+							<bookDevices description="点击Book按钮预约设备">
+					       		<element name="bookDeviceNames"    			type="xpath"        value="//div[@class='device-model']"/>
+					       		<element name="data"    					type="xpath"        value="//div[@class='device-model']"/>
+					       		<element name="calendar"    				type="xpath"        value="//i[@class='glyphicon glyphicon-calendar']"/>
+					       		<element name="batch"    					type="xpath"        value="//input[@ng-model='batchBook']"/>
+					       		<element name="perhalfanhour"    			type="xpath"        value="(//span[contains(@class,'radio-text')])[1]"/>
+                                <element name="1stperhalfanhouravailabletime"    	type="xpath"        value="(//span[contains(@class,'select-time ng-scope bookable')])[1]"/>
+                                <element name="1stperhalfanhourbookedtime"    	    type="xpath"        value="(//span[contains(@class,'select-time ng-scope bookSelf')])[1]"/>
+
+                                <element name="perday"    					type="xpath"        value="(//span[contains(@class,'radio-text')])[2]"/>
+
+                                <element name="1stperdaybookedtime"    	    type="xpath"        value="(//span[contains(@class,'select-day ng-scope bookSelf')])[1]"/>
+                                <element name="1stperdayavailabletime"    	type="xpath"        value="(//span[contains(@class,'select-day ng-scope bookable')])[1]"/>
+					       		<element name="model"    					type="xpath"        value="//div[@class='device-model']"/>
+					       		<element name="Submit"    					type="xpath"        value="//span[text()='Submit']"			view="alldevices:groupview"/>
+					       		<element name="Close"    					type="xpath"        value="//span[text()='Close']"			view="alldevices:groupview"/>
+					       		<element name="saveyourlastoperation"    	type="xpath"        value="//h4[text()='Do you want to save your last operation ?']"/>
+					       		<element name="Confirm"    					type="xpath"        value="//button[@ng-click='ok()']"/>
+					       		<element name="Cancel"    					type="xpath"        value="//span[text()='Cancel']"	/>
+
+					  		</bookDevices>
+					  		
+							<!-- 
+							@Date: 2017/10/26
+							@Module: AndroidSingleControl
+							Add elements as below,
+								controlDeviceConfirmDuration10min
+								controlDeviceConfirmDuration20min
+								controlDeviceConfirmDuration1h
+								cdcDurationCustomer
+							 -->
+					  		<controlDialog description="控制设备 确认页面 " >
+						  		<element name="controlDeviceConfirm"  		type="xpath" 		value="//div[@class='modal-body']" />
+						  		<element name="controlDeviceConfirmDuration10min"  		type="xpath" 		value="//div[@class='btn-group pull-left']/button[1]" />
+						  		<element name="controlDeviceConfirmDuration20min"  		type="xpath" 		value="//div[@class='btn-group pull-left']/button[2]" />
+						  		<element name="controlDeviceConfirmDuration30min"  		type="xpath" 		value="//div[@class='btn-group pull-left']/button[3]" />
+						  		<element name="controlDeviceConfirmDuration1h"  		type="xpath" 		value="//div[@class='btn-group pull-left']/button[4]" />
+						  		<element name="cdcDurationCustomer"  		type="xpath" 		value="//input[contains(@class,'form-control')][parent::div[contains(@class,'input-group')]]" />
+						  		
+						  		<element name="confirmButtonByControl"  	type="xpath" 		value="//div[@class='modal-footer']//button[contains(@ng-click,'ok')]" />
+					  			
+					  			<element name="controlDeviceChargedInfo"  		type="xpath" 		value="//div[@class='growl-message ng-binding ng-scope']/h4" />
+					  		</controlDialog>
+
+
+
+					  		<deviceControl description="device">
+						 		<element name="deviceNames"    				type="xpath"        value="(//span[contains(@class,'device-name-text')])" />
+						 	 	<element name="deviceScreens"    			type="xpath"        value="(//canvas[contains(@class,'screen')])" />
+						    	<element name="deviceName1"    				type="xpath"        value="(//span[contains(@class,'device-name-text')])[1]" />
+						    	<element name="deviceName2"   				type="xpath"        value="(//span[contains(@class,'device-name-text')])[3]" />
+						    	<element name="deviceScreen1"    			type="xpath"        value="(//canvas[contains(@class,'screen')])[1]" />
+						    	<element name="deviceScreen2"    			type="xpath"        value="(//canvas[contains(@class,'screen')])[2]" />
+						    	<element name="menuButton"          		type="xpath"       	value="//i[contains(@ng-class,'deviceOperationPnlFolded')]" />
+							</deviceControl>
+
+							
+							<ReleaseAll description="release device">
+						 		<element name="releaseAllDevice"    				type="xpath"        value="//*[@class='filter-bar clear-fix']/button[3]" />
+						 	 	<element name="deviceScreens"    			type="xpath"        value="(//canvas[contains(@class,'screen')])" />
+						    	<element name="deviceName1"    				type="xpath"        value="(//span[contains(@class,'device-name-text')])[1]" />
+						    	<element name="deviceName2"   				type="xpath"        value="(//span[contains(@class,'device-name-text')])[3]" />
+						    	<element name="deviceScreen1"    			type="xpath"        value="(//canvas[contains(@class,'screen')])[1]" />
+						    	<element name="deviceScreen2"    			type="xpath"        value="(//canvas[contains(@class,'screen')])[2]" />
+							</ReleaseAll>
+
+
+					   		<Info description="device Info">
+								<element name="Info" 			  			type="xpath"       	value="(//div[contains(@ng-click,'setOperateAction(row.name)')]/i)[6]" />
+								<element name="Serial"   					type="xpath"       	value="(//table[@class='stf-info-table'])[3]/tbody/tr[5]/td[2]/span[2]" />
+								<element name="deviceName"  	 			type="xpath"       	value="(//table[@class='stf-info-table'])[1]/tbody/tr[2]/td[2]/span[2]" />
+								<element name="OS"   						type="xpath"       	value="(//table[@class='stf-info-table'])[2]/tbody/tr[2]/td[1]/span[2]" />
+								<element name="Version"   					type="xpath"       	value="(//table[@class='stf-info-table'])[2]/tbody/tr[3]/td[1]/span[2]" />
+								<element name="SDK"   						type="xpath"       	value="(//table[@class='stf-info-table'])[2]/tbody/tr[4]/td[1]/span[2]" />
+								<element name="IMEI"   						type="xpath"       	value="(//table[@class='stf-info-table'])[3]/tbody/tr[5]/td[1]/span[2]" />
+								<element name="ICCID"   					type="xpath"       	value="(//table[@class='stf-info-table'])[3]/tbody/tr[6]/td[1]/span[2]" />
+							</Info>
+						</areas>
+				 </page>
+
+                <page name="groups" defaultView="defaultview" description = "Groups页面元素">
+                    <view name="defaultview" 		areas="[common,login,leftopt,groupstop,groupsbottom,grouptable]" />
+                    <view name="addnewgroup"        areas="[addnewgroup]"/>
+                    <areas>
+                        <leftopt>
+                            <!--<leftOption description="左边选项">-->
+                            <element name="groups"              type="xpath"       value="//span[text()='Groups']"      view="groups:defaultview"/>
+                            <element name="devices"             type="xpath"       value="//span[text()='All Devices']"     view="alldevices:groupview" />
+                      		<element name="All Devices"             type="xpath"       value="//a[child::span[contains(text(),'All Devices')]]"     view="alldevices:groupview" />
+                        </leftopt>
+
+                        <groupstop description="Groups页面顶部公用部分元素">
+                            <element name="addnewgroupBtn"              type="xpath"       value="//button[contains(@ng-click,'addDeviceGroup')]"      view="groups:addnewgroup"/>
+                            <element name="removeBtn"              type="xpath"       value="//button[contains(@ng-click,'batchRemoveDeviceGroups')]"  />
+                            <!--remove确认框-->
+                            <element name="removeconfirmBtn"              type="xpath"       value="//button[contains(@ng-click,'ok')]"  />
+                            <element name="removecancelBtn"              type="xpath"       value="(//button[contains(@ng-click,'cancel')])[2]"  />
+
+                        </groupstop>
+
+                        <grouptable description="Groups页面列表部分元素">
+                            <!-- 无设备组时的元素  -->
+                            <element name="empty"              type="xpath"       value="//div[contains(@class,'list_empty')]"/>
+                            <!-- 有设备组时的元素  -->
+                            <element name="selectallCheckbox"           type="xpath"       value="(//table[contains(@class,'table-striped')]//th)[1]/input"/>
+                            <element name="groupnamelabel"              type="xpath"       value="(//table[contains(@class,'table-striped')]//th)[2]//span"/>
+                            <element name="platformlabel"               type="xpath"       value="(//table[contains(@class,'table-striped')]//th)[3]//span"/>
+                            <element name="totaldeviceslabel"           type="xpath"       value="(//table[contains(@class,'table-striped')]//th)[4]//span"/>
+                            <element name="createdatelabel"             type="xpath"       value="(//table[contains(@class,'table-striped')]//th)[5]//span"/>
+                            <element name="actionlabel"                 type="xpath"       value="(//table[contains(@class,'table-striped')]//th)[6]//span"/>
+                            <element name="selectCheckbox"              type="xpath"       value="//input[contains(@ng-click,'toggleDeviceGroups')]"/>
+                            <element name="groupname"                   type="xpath"       value="(//table[contains(@class,'table-striped')]//td)[2]//span"/>
+                            <element name="platform"                    type="xpath"       value="(//table[contains(@class,'table-striped')]//td)[3]//span"/>
+                            <element name="totaldevices"                type="xpath"       value="(//table[contains(@class,'table-striped')]//td)[4]//span"/>
+                            <element name="createdate"                  type="xpath"       value="(//table[contains(@class,'table-striped')]//td)[5]//span"/>
+                            <element name="action"                      type="xpath"       value="(//table[contains(@class,'table-striped')]//td)[6]//span"/>
+
+                        </grouptable>
+
+                        <groupsbottom description="Groups页面底部公用部分元素">
+
+                        </groupsbottom>
+
+                        <addnewgroup>
+                            <element name="cancelBtn"              type="xpath"       value="//button[text()='Cancel')]"      view="groups:defaultview"/>
+                            <element name="submitBtn"              type="xpath"       value="//button[text()='Submit')]"      view="groups:defaultview"/>
+                        </addnewgroup>
+                    </areas>
+                </page>
+
+
+		 	</pages>
+	</UiMap>
+</test-data>

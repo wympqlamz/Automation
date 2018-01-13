@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Default suite">
+	<!--<listeners>-->
+        <!--<listener class-name="com.by.automate.tools.testng.LastListenersTestng" />-->
+    <!--</listeners> -->
+  <test verbose="2" name="DP Interdace Test">
+      <classes>
+
+          <class name="com.by.automate.testCases.Interface_new.test_interface_app" />
+          <class name="com.by.automate.testCases.Interface_new.test_interface_appId" />
+          <class name="com.by.automate.testCases.Interface_new.test_interface_apps" />
+          <class name="com.by.automate.testCases.Interface_new.test_interface_balance" />
+          <class name="com.by.automate.testCases.Interface_new.test_interface_deviceGroups" />
+          <class name="com.by.automate.testCases.Interface_new.test_interface_devices_deviceID" />
+          <class name="com.by.automate.testCases.Interface_new.test_interface_script" />
+          <class name="com.by.automate.testCases.Interface_new.test_interface_scriptId" />
+          <class name="com.by.automate.testCases.Interface_new.test_interface_scripts" />
+          <class name="com.by.automate.testCases.Interface_new.test_interface_testReportId" />
+          <class name="com.by.automate.testCases.Interface_new.test_interface_testStatus" />
+          <class name="com.by.automate.testCases.Interface_new.test_interface_testStatusId" />
+          <class name="com.by.automate.testCases.Interface_new.test_interface_Launch_Stop_AutomationTest" />
+
+      </classes>
+  </test> <!-- Default test -->
+</suite>

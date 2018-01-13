@@ -1,0 +1,113 @@
+Generated File. Do not edit.
+
+[HEADER]
+Version|0.17|$
+Arch|x86-msvc|$
+
+[PLUGINS]
+NPSWF32_24_0_0_186.dll|$
+C:\Windows\SysWOW64\Macromed\Flash\NPSWF32_24_0_0_186.dll|$
+24.0.0.186|$
+1482197543666|0|0|0|$
+Shockwave Flash 24.0 r0|$
+Shockwave Flash|$
+2
+0|application/x-shockwave-flash|Adobe Flash movie|swf|$
+1|application/futuresplash|FutureSplash movie|spl|$
+npGoogleUpdate3.dll|$
+C:\Program Files (x86)\Google\Update\1.3.31.5\npGoogleUpdate3.dll|$
+1.3.31.5|$
+1480026050231|0|0|0|$
+Google Update|$
+Google Update|$
+2
+0|application/x-vnd.google.update3webcontrol.3|||$
+1|application/x-vnd.google.oneclickctrl.9|||$
+npactivex.dll|$
+C:\Program Files (x86)\Common Files\Tencent\Npchrome\npactivex.dll|$
+6.0.1.1|$
+1477310959125|0|0|0|$
+Tencent QQ CPHelper plugin for Chrome|$
+Tencent QQ|$
+1
+0|application/qscall-plugin|DLL|dll|$
+nppdf32.dll|$
+C:\Program Files (x86)\Adobe\Acrobat Reader DC\Reader\AIR\nppdf32.dll|$
+15.20.20039.7108|$
+1475278574000|0|0|0|$
+Adobe PDF Plug-In For Firefox and Netscape 15.20.20039|$
+Adobe Acrobat|$
+7
+0|application/pdf|Acrobat Portable Document Format|pdf|$
+1|application/vnd.adobe.pdfxml|Adobe PDF in XML Format|pdfxml|$
+2|application/vnd.adobe.x-mars|Adobe PDF in XML Format|mars|$
+3|application/vnd.fdf|Acrobat Forms Data Format|fdf|$
+4|application/vnd.adobe.xfdf|XML Version of Acrobat Forms Data Format|xfdf|$
+5|application/vnd.adobe.xdp+xml| Acrobat XML Data Package|xdp|$
+6|application/vnd.adobe.xfd+xml|Adobe FormFlow99 Data File|xfd|$
+npSSOAxCtrlForPTLogin.dll|$
+C:\Program Files (x86)\Common Files\Tencent\TXSSO\1.2.5.13\Bin\npSSOAxCtrlForPTLogin.dll|$
+1.0.1.16|$
+1472541588000|0|0|0|$
+QQ QuickLogin Helper|$
+Tencent SSO Platform|$
+1
+0|application/nptxsso|TXSSO||$
+npQzoneMusic.dll|$
+C:\Program Files (x86)\Tencent\QQMusic\QzoneMusic\npQzoneMusic.dll|$
+9.51.3087.226|$
+1456451578000|0|0|0|$
+QQÒôÀÖ²¥·Å¿Ø¼þ|$
+QQÒôÀÖ²¥·Å¿Ø¼þ|$
+1
+0|application/tecent-qzonemusic-plugin|This plug-in is transfers of QzoneMusic when opening Qzone in a web page with Firefox.|rts|$
+npitunes.dll|$
+C:\Program Files (x86)\iTunes\Mozilla Plugins\npitunes.dll|$
+1.0.1.1|$
+1450393404000|0|0|0|$
+iTunes Detector Plug-in|$
+iTunes Application Detector|$
+1
+0|application/itunes-plugin|This plug-in detects the presence of iTunes when opening iTunes Store URLs in a web page with Firefox.||$
+npqqwebgame.dll|$
+C:\Users\qinhuan02\AppData\Roaming\Tencent\WebGamePlugin\1.0.4.3\npqqwebgame.dll|$
+1.0.4.3|$
+1445322560000|0|0|0|$
+QQWebGamePlugin Pro|$
+QQGamePlugin Pro|$
+1
+0|application/npqqwebgame|QQWebGamePlugin Pro|rts|$
+npWandoujiaHelper.dll|$
+d:\Program Files (x86)\WandouLabs\npWandoujiaHelper.dll|$
+2.0.0.1|$
+1421896546000|0|0|0|$
+Wandoujia Plugin|$
+Wandoujia Plugin|$
+1
+0|application/wandoujia-plugin|Wandoujia Plugin||$
+npQQPhotoDrawEx.dll|$
+C:\Program Files (x86)\Tencent\Qzone\npQQPhotoDrawEx.dll|$
+2.47.312.813|$
+1376385610000|0|0|0|$
+npQQPhotoDrawEx Module|$
+npQQPhotoDrawEx|$
+1
+0|application/tencent-qqphotodrawex2-plugin||rts|$
+NPSPWRAP.DLL|$
+C:\PROGRA~2\MICROS~1\Office14\NPSPWRAP.DLL|$
+14.0.4761.1000|$
+1269433358000|0|0|0|$
+The plug-in allows you to open and edit files using Microsoft Office applications|$
+Microsoft Office 2010|$
+1
+0|application/x-sharepoint|SharePoint Plug-in for Firefox||$
+NPAUTHZ.DLL|$
+C:\PROGRA~2\MICROS~1\Office14\NPAUTHZ.DLL|$
+14.0.4730.1010|$
+1263044538000|0|0|0|$
+Office Authorization plug-in for NPAPI browsers|$
+Microsoft Office 2010|$
+1
+0|application/x-msoffice14|14.0.4730.1010|*|$
+
+[INVALID]

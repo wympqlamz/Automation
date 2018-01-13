@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-data>
+
+		<UiMap>
+		    <application>
+				<DefaultPage>rate</DefaultPage>
+				<AppName>Devicepass</AppName>
+				<Version>0.0.1</Version>
+				<Environment>QA</Environment>
+				<TestCategory>Web</TestCategory>
+				<NetWork>Local Connection</NetWork>
+				<Description>保存Devicepass所有页面的元素定位</Description>
+			</application>
+			<pages>
+
+				<page name="rate" defaultView="DPOSettingsview" description = "Rate默认view" >
+				 		
+				 		<!-- define 4 views based on DPO Settings/DPC Settings/Pricing Settings/Rating & Hot Model Settings -->
+				 		<view name="DPOSettings" 					areas="[common,login,DPOSettings]" />
+				 		<view name="DPCSettings" 					areas="[common,login,DPCSettings]" />
+				 		<view name="PricingSettings" 				areas="[common,login,PricingSettings]" />
+				 		<view name="HotModelSettings" 				areas="[common,login,HotModelSettings]" />
+				 		
+				 		<areas>
+				 		
+<!--                             <leftopt> -->
+<!--                                <leftOption description="左边选项"> -->
+<!--                                <element name="RecentUsedMenu"      type="xpath"       value="//span[text()='Recently Used']"      														 view="recentUsed:defaultview"/> -->
+<!--                    			<element name="groups"              type="xpath"       value="//span[text()='Groups']"             														 view="groups:defaultview"/> -->
+<!-- 			                    <element name="rateMenu"            type="xpath"       value="//span[text()='Rate']"               														 view="rate:pricingsettings" /> -->
+<!-- 								<element name="All Devices"         type="xpath"       value="//a[child::span[contains(text(),'All Devices')]]"      									 view="alldevices:groupview" /> -->
+<!--                             	<element name="Utilization"         type="xpath"       value="//div[@class='menu-list fill-height ng-scope']/descendant::span[text()='Utilization']"     view="utilization:deviceUtilizationview" /> -->
+<!--                             </leftopt> -->
+                            
+                            <DPOSettings>
+                           		<!--Auto Quota Distribution on/off button-->
+                                <element name="AutoQuotaSwitchButton"                  type="xpath"       value="//div[@class='box']/descendant::div[@class='inner-check-div']"        />
+                            	
+                            </DPOSettings>
+                            
+                            <DPCSettings>
+                                <!---->
+                                <element name=""      type="xpath"       value=""       />
+                           
+                            </DPCSettings>
+                            
+                            <PricingSettings>
+                                <!--Go to All Devices list of Regular Device -->
+                                <element name="RegularAllDeviceslist"      type="xpath"       value="//div[@class='col-sm-3 line-height-30']/span[@class='label label-info pointer ng-binding ng-scope' and @uib-tooltip='Go to All Devices list' and preceding::div[@class='col-sm-6 ng-scope']/span[text()='Regular  Device']]"     view="alldevices:listview"  />
+                           
+                            </PricingSettings>
+                            
+                            <HotModelSettings>
+                                <!---->
+                                <element name=""      type="xpath"       value=""       />
+                           
+                            </HotModelSettings>
+						</areas>
+				 </page>
+				 
+				 <page name="alldevices" defaultView="listview" description = "All Devices页面元素" >
+				 	<view name="groupview" 			areas="[groupview]" />
+				 	<areas>
+				 		<!-- all devices default view  -->
+				 		<groupview>
+				 			<!-- Selected 0 of xx -->
+				 			<element name="SelectedDeviceNum" type="xpath" value="//div[@class='search-bar clear-fix']/descendant::div[@class='pull-right total-length']/span" />
+				 		
+				 		</groupview>
+				 	</areas>
+				 </page>
+				 
+		 	</pages>
+	</UiMap>
+</test-data>

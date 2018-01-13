@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suite1">
+	
+    <test name="groups" preserve-order="true">
+        <groups>
+            <run>
+				<!-- login -->
+					<include name="test00000_Login_Delete" />
+				
+				<!-- apps -->
+					<include name="test00010_openApps" />
+				
+					<!-- app上传 -->
+						<!-- iPhone -->
+						<include name="test00020_DeleteAllApp" />
+						<include name="test00040_app_uploadIpa" />
+							
+					<!--Scrip -->
+						<!-- iPhone -->
+							<include name="test00110_selectAppScriptType" />
+							<include name="test00130_uploadAppScript_python" />
+							<include name="test00131_deleteAppScript" />
+							<include name="test00132_ScriptMessagebox_assert_norecords" />
+							<include name="test00180_closeScriptWindows" />
+				
+				<!-- current use-->
+					<!-- iPhone -->
+						<include name="test00300_allDevice_selectDevice_iphone" />
+						<include name="test00310_CurrentUse_uploadpac" />
+						<!--Scrip上传 -->
+							<!-- AppiumPython -->
+							<include name="test00330_currentUse_AppiumPython_scriptupload" />
+							<include name="test00370_deleteAppScript" />
+							<include name="test00380_currentUse_script_close" />
+							 <!-- 可以删除,要测试 -->
+						
+				
+				<!-- after test -->
+					<include name="test90000_releaseAll" />
+					<include name="test91000_removeApp" />
+					<include name="test99999_tearDown" />
+				
+            </run>
+        </groups>
+
+        <classes>
+            <class name="com.by.automate.testCases.devicepass.user.workspaces.apps.test.Test_FC_test" />
+
+        </classes>
+    </test>
+  
+  
+
+	
+
+</suite>

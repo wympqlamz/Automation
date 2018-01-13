@@ -1,0 +1,10 @@
+/bin/
+/target/
+/test-output/
+/custom_report/
+.classpath
+/.idea/
+DP-Test.iml
+.settings
+.sonar
+*DPUi.xml
