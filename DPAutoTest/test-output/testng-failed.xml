@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Testng]">
+  <test name="DP(failed)">
+    <groups>
+      <run>
+        <include name="module1"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.bys.devicpass.test.androidsinglecontrol.testAndroidSingleControl">
+        <methods>
+          <include name="release"/>
+          <include name="A9_InstallApp"/>
+          <include name="init"/>
+        </methods>
+      </class> <!-- com.bys.devicpass.test.androidsinglecontrol.testAndroidSingleControl -->
+    </classes>
+  </test> <!-- DP(failed) -->
+</suite> <!-- Failed suite [Testng] -->

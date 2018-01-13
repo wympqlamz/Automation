@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Testng">
+	<test name="DP" preserve-order="true">
+		<groups>
+			<define name="Group1" />
+			<define name="Group2" />
+			
+			<define name="module1">
+				<include name="Group2"/>
+			</define>
+		
+			<run>
+				<include name="module1" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.bys.devicpass.test.androidsinglecontrol.testAndroidSingleControl" />
+		</classes>
+	</test>
+</suite>
